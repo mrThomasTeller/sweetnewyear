@@ -1,0 +1,44 @@
+$center-width: 960px;
+
+@import "compass/support";
+$legacy-support-for-ie6: false;
+@import "compass/utilities/sprites";
+
+$sprites-layout:smart;
+$sprites: sprite-map("sprites/*.png", $layout: smart);
+
+@mixin lobster-font {
+	font-family: 'Lobster', cursive;
+}
+
+@mixin rec-sprite($map, $sprite, $dimensions: true) {
+	@include sprite($map, $sprite, $dimensions);
+	background-image: $map;
+}
+
+@function get-sprite-width($map, $sprite){
+	@return image-width(sprite-file($map, $sprite));
+}
+@function get-sprite-height($map, $sprite){
+	@return image-height(sprite-file($map, $sprite));
+}
+
+@mixin margin-center {
+	margin: 0 auto;
+}
+
+@mixin width-with-padding($width, $padding-left, $padding-right){
+	width: $width - $padding-left - $padding-right;
+	padding-left: $padding-left;
+	padding-right: $padding-right;
+}
+@mixin height-with-padding($height, $padding-top, $padding-bottom){
+	height: $height - $padding-top - $padding-bottom;
+	padding-top: $padding-top;
+	padding-bottom: $padding-bottom;
+}
+@mixin dimensions-with-padding($width, $height, $padding-top, $padding-right, $padding-bottom, $padding-left){
+	width: $width - $padding-left - $padding-right;
+	height: $height - $padding-top - $padding-bottom;
+	padding: $padding-top $padding-right $padding-bottom $padding-left;
+}

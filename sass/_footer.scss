@@ -1,0 +1,14 @@
+@import "global";
+
+$footer-height: 203px;
+
+.l-footer {
+	height: $footer-height;
+	background-image: url(../img/vbgsprites/footerbg.png);
+}
+
+.b-footer {
+	height: 100%;
+	width: 865px;
+	margin: 0 auto;
+}
