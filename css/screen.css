@@ -379,18 +379,25 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  -webkit-box-shadow: inset 1px 1px 3px #a8a8a8;
-  -moz-box-shadow: inset 1px 1px 3px #a8a8a8;
-  box-shadow: inset 1px 1px 3px #a8a8a8;
+  -webkit-box-shadow: inset #a8a8a8 1px 1px 3px;
+  -moz-box-shadow: inset #a8a8a8 1px 1px 3px;
+  box-shadow: inset #a8a8a8 1px 1px 3px;
   border: #dfdfdf 1px solid;
 }
+/* line 122, ../sass/_main-page.scss */
+.b-cbform-input-field:focus {
+  -webkit-box-shadow: inset #a8a8a8 1px 1px 3px, #fdff5c 0 0 10px;
+  -moz-box-shadow: inset #a8a8a8 1px 1px 3px, #fdff5c 0 0 10px;
+  box-shadow: inset #a8a8a8 1px 1px 3px, #fdff5c 0 0 10px;
+  outline: none;
+}
 
-/* line 121, ../sass/_main-page.scss */
+/* line 127, ../sass/_main-page.scss */
 .b-cbform-input-label {
   display: block;
   font-size: 12px;
 }
-/* line 125, ../sass/_main-page.scss */
+/* line 131, ../sass/_main-page.scss */
 .b-cbform-input-label .required {
   color: red;
 }
@@ -434,11 +441,12 @@ body {
 
 /* line 26, ../sass/_slider.scss */
 .b-products-slider-items {
+  position: relative;
   height: 100%;
   width: 99999px;
 }
 
-/* line 32, ../sass/_slider.scss */
+/* line 33, ../sass/_slider.scss */
 .b-product {
   width: 690px;
   padding-left: 35px;
@@ -448,14 +456,14 @@ body {
   float: left;
 }
 
-/* line 39, ../sass/_slider.scss */
+/* line 40, ../sass/_slider.scss */
 .b-prodimages {
   position: relative;
   float: left;
   width: 225px;
 }
 
-/* line 44, ../sass/_slider.scss */
+/* line 45, ../sass/_slider.scss */
 .b-prodimages-icons {
   position: absolute;
   top: 9px;
@@ -464,7 +472,7 @@ body {
   list-style: none;
 }
 
-/* line 51, ../sass/_slider.scss */
+/* line 52, ../sass/_slider.scss */
 .b-prodimages-icons-item {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -477,25 +485,25 @@ body {
   padding: 2px 0;
 }
 
-/* line 58, ../sass/_slider.scss */
+/* line 59, ../sass/_slider.scss */
 .b-prodimages-icons-item-anchor {
   display: block;
 }
 
-/* line 61, ../sass/_slider.scss */
+/* line 62, ../sass/_slider.scss */
 .b-prodimages-icons-item-img {
   margin: 0 auto;
   display: block;
 }
 
-/* line 66, ../sass/_slider.scss */
+/* line 67, ../sass/_slider.scss */
 .b-product-right {
   position: relative;
   margin-left: 275px;
   height: 100%;
 }
 
-/* line 72, ../sass/_slider.scss */
+/* line 73, ../sass/_slider.scss */
 .b-product-title {
   color: #633100;
   font-weight: bold;
@@ -504,26 +512,26 @@ body {
   font-family: 'Times New Roman', serif;
 }
 
-/* line 79, ../sass/_slider.scss */
+/* line 80, ../sass/_slider.scss */
 .b-product-title-primary {
   display: block;
   font-size: 45px;
 }
 
-/* line 83, ../sass/_slider.scss */
+/* line 84, ../sass/_slider.scss */
 .b-product-title-secondary {
   display: block;
   font-size: 30px;
 }
 
-/* line 89, ../sass/_slider.scss */
+/* line 90, ../sass/_slider.scss */
 .b-product-description {
   line-height: 27px;
   font-size: 22px;
   color: #3a190a;
 }
 
-/* line 95, ../sass/_slider.scss */
+/* line 96, ../sass/_slider.scss */
 .b-product-label {
   background-position: 0 -254px;
   height: 144px;
@@ -537,7 +545,7 @@ body {
   font-family: 'Tahoma', 'Trebuchet MS', serif;
 }
 
-/* line 104, ../sass/_slider.scss */
+/* line 105, ../sass/_slider.scss */
 .b-product-label-weight {
   position: absolute;
   bottom: 25px;
@@ -546,7 +554,7 @@ body {
   font-size: 27px;
 }
 
-/* line 111, ../sass/_slider.scss */
+/* line 112, ../sass/_slider.scss */
 .b-product-label-price {
   position: absolute;
   top: 30px;
@@ -554,7 +562,7 @@ body {
   font-size: 60px;
 }
 
-/* line 119, ../sass/_slider.scss */
+/* line 120, ../sass/_slider.scss */
 .b-products-delimiter {
   background-position: 0 -86px;
   height: 24px;
@@ -563,14 +571,14 @@ body {
   margin: 0 auto;
 }
 
-/* line 124, ../sass/_slider.scss */
+/* line 125, ../sass/_slider.scss */
 .b-prodicons {
   padding: 19px 0;
   text-align: center;
   list-style: none;
 }
 
-/* line 148, ../sass/_slider.scss */
+/* line 134, ../sass/_slider.scss */
 .b-prodicons-item {
   display: inline-block;
   position: relative;
@@ -580,19 +588,22 @@ body {
   padding: 5px 5px 5px 5px;
   background: none;
 }
-/* line 154, ../sass/_slider.scss */
+/* line 140, ../sass/_slider.scss */
 .b-prodicons-item.state_selected {
   background: #a37d64;
 }
 
-/* line 158, ../sass/_slider.scss */
+/* line 144, ../sass/_slider.scss */
 .b-prodicons-item-h {
+  -webkit-box-shadow: gray 0 0 10px;
+  -moz-box-shadow: gray 0 0 10px;
+  box-shadow: gray 0 0 10px;
   width: 65px;
   height: 100px;
   background-color: white;
 }
 
-/* line 163, ../sass/_slider.scss */
+/* line 150, ../sass/_slider.scss */
 .b-prodicons-item-h-h {
   text-align: center;
 }

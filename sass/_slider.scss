@@ -24,6 +24,7 @@
 	height: 100%;
 }
 .b-products-slider-items {
+	position: relative;
 	height: 100%;
 	width: 99999px;
 }
@@ -126,21 +127,6 @@
 	text-align: center;
 	list-style: none;
 }
-//.b-prodicons-item {
-//	display: inline-block;
-//	position: relative;
-//	margin: 0 20px;
-//	width: 75px;
-//	height: 110px;
-//	background: none;
-//	&.state_selected {
-//		background: #a37d64;
-//	}
-//}
-//.b-prodicons-item-anchor {
-//	@include stretch-exact(5px);
-//	background-color: white;
-//}
 
 $b-prodicons-item-width: 75px;
 $b-prodicons-item-height: 110px;
@@ -156,6 +142,7 @@ $b-prodicons-item-border: 5px;
 	}
 }
 .b-prodicons-item-h {
+	@include box-shadow(gray 0 0 10px);
 	width: $b-prodicons-item-width - $b-prodicons-item-border * 2;
 	height: $b-prodicons-item-height - $b-prodicons-item-border * 2;
 	background-color: white;

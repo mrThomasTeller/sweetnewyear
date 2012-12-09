@@ -1,0 +1,113 @@
+{
+	"products": [
+		{
+			"title": {
+				"primary": "Иван-Чай",
+				"secondary": "чёрный гранулированный"
+			},
+			"description": "Мы предоставляем продукт в его естественном виде. Задача поставленная перед нами, это стабильно снабжать жителей города Мёдом, тем самым который лечит.<br/>С уважением, Егор и команда.",
+			"price": 499,
+			"package": "50 г",
+			"images": {
+				"main": "ivan-tea/big.png",
+				"preview": "ivan-tea/preview.png",
+				"add": [
+					{
+						"icon": "ivan-tea/mini.png",
+						"full": "ivan-tea/big.png",
+						"title": "Вкусный иван чай!!!"
+					},
+					{
+						"icon": "ivan-tea/mini.png",
+						"full": "ivan-tea/big.png"
+					},
+					{
+						"icon": "ivan-tea/mini.png",
+						"full": "ivan-tea/big.png"
+					}
+				]
+			}
+		},
+		{
+			"title": {
+				"primary": "Иван-Чай",
+				"secondary": "чёрный гранулированный"
+			},
+			"description": "Мы предоставляем продукт в его естественном виде. Задача поставленная перед нами, это стабильно снабжать жителей города Мёдом, тем самым который лечит.<br/>С уважением, Егор и команда.",
+			"price": 499,
+			"package": "50 г",
+			"images": {
+				"main": "ivan-tea/big.png",
+				"preview": "ivan-tea/preview.png",
+				"add": [
+					{
+						"icon": "ivan-tea/mini.png",
+						"full": "ivan-tea/big.png"
+					},
+					{
+						"icon": "ivan-tea/mini.png",
+						"full": "ivan-tea/big.png"
+					},
+					{
+						"icon": "ivan-tea/mini.png",
+						"full": "ivan-tea/big.png"
+					}
+				]
+			}
+		},
+		{
+			"title": {
+				"primary": "Иван-Чай",
+				"secondary": "чёрный гранулированный"
+			},
+			"description": "Мы предоставляем продукт в его естественном виде. Задача поставленная перед нами, это стабильно снабжать жителей города Мёдом, тем самым который лечит.<br/>С уважением, Егор и команда.",
+			"price": 499,
+			"package": "50 г",
+			"images": {
+				"main": "ivan-tea/big.png",
+				"preview": "ivan-tea/preview.png",
+				"add": [
+					{
+						"icon": "ivan-tea/mini.png",
+						"full": "ivan-tea/big.png"
+					},
+					{
+						"icon": "ivan-tea/mini.png",
+						"full": "ivan-tea/big.png"
+					},
+					{
+						"icon": "ivan-tea/mini.png",
+						"full": "ivan-tea/big.png"
+					}
+				]
+			}
+		},
+		{
+			"title": {
+				"primary": "Иван-Чай",
+				"secondary": "чёрный гранулированный"
+			},
+			"description": "Мы предоставляем продукт в его естественном виде. Задача поставленная перед нами, это стабильно снабжать жителей города Мёдом, тем самым который лечит.<br/>С уважением, Егор и команда.",
+			"price": 499,
+			"package": "50 г",
+			"images": {
+				"main": "ivan-tea/big.png",
+				"preview": "ivan-tea/preview.png",
+				"add": [
+					{
+						"icon": "ivan-tea/mini.png",
+						"full": "ivan-tea/big.png"
+					},
+					{
+						"icon": "ivan-tea/mini.png",
+						"full": "ivan-tea/big.png"
+					},
+					{
+						"icon": "ivan-tea/mini.png",
+						"full": "ivan-tea/big.png"
+					}
+				]
+			}
+		}
+	]
+}

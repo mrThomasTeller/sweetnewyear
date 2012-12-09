@@ -4,6 +4,7 @@
 	<title>Сладкий новый год</title>
 	<link href="./css/screen.css" media="screen, projection" rel="stylesheet"/>
 	<link href="./css/print.css" media="print" rel="stylesheet"/>
+	<link href="./js/vendor/fancybox/jquery.fancybox.css" rel="stylesheet"/>
 </head>
 <body>
 
@@ -32,26 +33,16 @@
 				<a href="javascript:void(0)" class="b-products-slider-button b-products-slider-button-next"></a>
 
 				<div class="w-b-products-slider-items">
-					<div class="b-products-slider-items">
+					<div class="b-products-slider-items" data-bind="foreach: products">
 						<article class="b-products-slider-item b-product">
 							<div class="b-prodimages">
 								<figure class="b-prodimages-main">
-									<img src="resources/products/ivan-tea/big.png" class="b-prodimages-main-img"/>
+									<img class="b-prodimages-main-img" data-bind="attr: {src: $root.getProductImage(images.main)}"/>
 								</figure>
-								<ul class="b-prodimages-icons">
+								<ul class="b-prodimages-icons" data-bind="foreach: images.add, fancyboxGroup: true">
 									<li class="b-prodimages-icons-item">
-										<a href="javascript:void(0)" class="b-prodimages-icons-item-anchor">
-											<img src="resources/products/ivan-tea/mini.png" class="b-prodimages-icons-item-img"/>
-										</a>
-									</li>
-									<li class="b-prodimages-icons-item">
-										<a href="javascript:void(0)" class="b-prodimages-icons-item-anchor">
-											<img src="resources/products/ivan-tea/mini.png" class="b-prodimages-icons-item-img"/>
-										</a>
-									</li>
-									<li class="b-prodimages-icons-item">
-										<a href="javascript:void(0)" class="b-prodimages-icons-item-anchor">
-											<img src="resources/products/ivan-tea/mini.png" class="b-prodimages-icons-item-img"/>
+										<a class="b-prodimages-icons-item-anchor" data-bind="attr: {href: $root.getProductImage(full), title: $data.title}">
+											<img class="b-prodimages-icons-item-img"  data-bind="attr: {src: $root.getProductImage(icon)}"/>
 										</a>
 									</li>
 								</ul>
@@ -59,59 +50,19 @@
 
 							<div class="b-product-right">
 								<h1 class="b-product-title">
-									<span class="b-product-title-primary">Иван-Чай</span>
-									<span class="b-product-title-secondary">чёрный гранулированный</span>
+									<span class="b-product-title-primary" data-bind="text: title.primary"></span>
+									<!-- ko if: !!title.secondary -->
+									<span class="b-product-title-secondary" data-bind="text: title.secondary"></span>
+									<!-- /ko -->
 								</h1>
 
-								<section class="b-product-description">
-									Мы предоставляем продукт в его естественном виде. Задача поставленная перед нами, это стабильно снабжать жителей города Мёдом, тем самым который лечит.<br/>
-									С уважением, Егор и команда.
-								</section>
+								<section class="b-product-description" data-bind="html: description"></section>
 
 								<div class="b-product-label">
-									<div class="b-product-label-price">499</div>
-									<div class="b-product-label-weight">50 г</div>
-								</div>
-							</div>
-						</article>
-						<article class="b-products-slider-item b-product">
-							<div class="b-prodimages">
-								<figure class="b-prodimages-main">
-									<img src="resources/products/ivan-tea/big.png" class="b-prodimages-main-img"/>
-								</figure>
-								<ul class="b-prodimages-icons">
-									<li class="b-prodimages-icons-item">
-										<a href="javascript:void(0)" class="b-prodimages-icons-item-anchor">
-											<img src="resources/products/ivan-tea/mini.png" class="b-prodimages-icons-item-img"/>
-										</a>
-									</li>
-									<li class="b-prodimages-icons-item">
-										<a href="javascript:void(0)" class="b-prodimages-icons-item-anchor">
-											<img src="resources/products/ivan-tea/mini.png" class="b-prodimages-icons-item-img"/>
-										</a>
-									</li>
-									<li class="b-prodimages-icons-item">
-										<a href="javascript:void(0)" class="b-prodimages-icons-item-anchor">
-											<img src="resources/products/ivan-tea/mini.png" class="b-prodimages-icons-item-img"/>
-										</a>
-									</li>
-								</ul>
-							</div>
-
-							<div class="b-product-right">
-								<h1 class="b-product-title">
-									<span class="b-product-title-primary">Иван-Чай</span>
-									<span class="b-product-title-secondary">чёрный гранулированный</span>
-								</h1>
-
-								<section class="b-product-description">
-									Мы предоставляем продукт в его естественном виде. Задача поставленная перед нами, это стабильно снабжать жителей города Мёдом, тем самым который лечит.<br/>
-									С уважением, Егор и команда.
-								</section>
-
-								<div class="b-product-label">
-									<div class="b-product-label-price">499</div>
-									<div class="b-product-label-weight">50 г</div>
+									<div class="b-product-label-price" data-bind="text: price"></div>
+									<!-- ko if: !!$data.package -->
+									<div class="b-product-label-weight" data-bind="text: package"></div>
+									<!-- /ko -->
 								</div>
 							</div>
 						</article>
@@ -119,53 +70,14 @@
 				</div>
 			</div>
 			<div class="b-products-delimiter"></div>
-			<ul class="b-prodicons">
-				<li class="b-prodicons-item state_selected">
-					<a href="javascript:void(0)" class="b-prodicons-item-anchor">
-						<table class="b-prodicons-item-h">
-							<tbody>
-							<tr>
-								<td class="b-prodicons-item-h-h">
-									<img src="resources/products/ivan-tea/preview.png" class="b-prodicons-item-img"/>
-								</td>
-							</tr>
-							</tbody>
-						</table>
-					</a>
-				</li>
+			<ul class="b-prodicons" data-bind="foreach: products">
 				<li class="b-prodicons-item">
 					<a href="javascript:void(0)" class="b-prodicons-item-anchor">
 						<table class="b-prodicons-item-h">
 							<tbody>
 							<tr>
 								<td class="b-prodicons-item-h-h">
-									<img src="resources/products/ivan-tea/preview.png" class="b-prodicons-item-img"/>
-								</td>
-							</tr>
-							</tbody>
-						</table>
-					</a>
-				</li>
-				<li class="b-prodicons-item">
-					<a href="javascript:void(0)" class="b-prodicons-item-anchor">
-						<table class="b-prodicons-item-h">
-							<tbody>
-							<tr>
-								<td class="b-prodicons-item-h-h">
-									<img src="resources/products/ivan-tea/preview.png" class="b-prodicons-item-img"/>
-								</td>
-							</tr>
-							</tbody>
-						</table>
-					</a>
-				</li>
-				<li class="b-prodicons-item">
-					<a href="javascript:void(0)" class="b-prodicons-item-anchor">
-						<table class="b-prodicons-item-h">
-							<tbody>
-							<tr>
-								<td class="b-prodicons-item-h-h">
-									<img src="resources/products/ivan-tea/preview.png" class="b-prodicons-item-img"/>
+									<img class="b-prodicons-item-img" data-bind="attr: {src: $root.getProductImage(images.preview)}"/>
 								</td>
 							</tr>
 							</tbody>
@@ -273,5 +185,7 @@
 		<div class="b-footer-copyright">2012 © Все права защищены</div>
 	</div>
 </footer>
+<script src="js/vendor/require.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

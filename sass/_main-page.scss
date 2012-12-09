@@ -113,10 +113,16 @@
 	}
 }
 .b-cbform-input-field {
+	$b-cbform-input-field-shadow: inset #a8a8a8 1px 1px 3px;
 	@include border-radius(5px);
 	@include stretch(12px, 0, 0, 0);
-	@include single-box-shadow(#a8a8a8, 1px, 1px, 3px, false, true);
+	@include box-shadow($b-cbform-input-field-shadow);
 	border: #dfdfdf 1px solid;
+	
+	&:focus {
+		@include box-shadow($b-cbform-input-field-shadow, #fdff5c 0 0 10px);
+		outline: none;
+	}
 }
 .b-cbform-input-label {
 	display: block;
