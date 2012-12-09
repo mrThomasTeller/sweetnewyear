@@ -1,14 +1,63 @@
 @import "global";
 
+$big-footer-text: 14px;
 $footer-height: 203px;
+$small-footer-text: 13px;
 
 .l-footer {
+	@include vbg-sprite($vsprites73, "footerbg");
 	height: $footer-height;
-	background-image: url(../img/vbgsprites/footerbg.png);
 }
 
 .b-footer {
-	height: 100%;
-	width: 865px;
+	@include dimensions-with-padding(865px, $footer-height, 40px, 0, 0, 48px);
+	position: relative;
 	margin: 0 auto;
+	text-align: center;
+	color: $color-light-pink;
+}
+
+.b-footer-honey {
+	@include rec-sprite($sprites, "footer-honey");
+	position: absolute;
+	left: 20px;
+	top: 29px;
+}
+
+.b-footer-text {
+	font-size: $small-footer-text;
+	margin-bottom: 10px;
+}
+
+.b-footer-nav {
+	margin-bottom: 32px;
+}
+
+.b-footer-nav-item {
+	@include block-anchor($color: light-pink);
+	font-size: $big-footer-text;
+	margin: 0 20px;
+}
+
+.b-footer-email {
+	display: inline-block;
+	font-size: $big-footer-text;
+	color: $color-light-pink;
+	text-decoration: none;
+	line-height: get-sprite-height($sprites, "mail-icon");
+	margin-bottom: 13px;
+	
+	&:hover .helper, &:focus .helper {
+		text-decoration: underline;
+	}
+}
+.b-footer-email-icon {
+	@include rec-sprite($sprites, "mail-icon");
+	display: inline-block;
+	position: relative;
+	top: 3px;
+}
+
+.b-footer-copyright {
+	font-size: $small-footer-text;
 }

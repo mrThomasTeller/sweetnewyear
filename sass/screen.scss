@@ -3,19 +3,11 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@font-face {
-	font-family: 'Lobster';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Lobster'), url(../resources/lobster.woff) format('woff');
-}
-
 @import "compass/reset";
-@import "global";
+@import "general";
 @import "header";
+@import "main-page";
+@import "slider";
 @import "footer";
 
-body {
-	background-image: url(../img/pagebg.png);
-	font-family: "Trebuchet MS", arial, serif;
-}
+

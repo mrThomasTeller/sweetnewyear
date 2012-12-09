@@ -1,11 +1,10 @@
 @import "global";
-@import "compass/css3/border-radius";
 
 $header-height: 256px;
 
 .l-header {
+	@include vbg-sprite($vsprites73, "headerbg");
 	height: $header-height;
-	background-image: url(../img/vbgsprites/headerbg.png);
 }
 
 .b-header {
@@ -30,75 +29,46 @@ $header-height: 256px;
 }
 
 .b-header-contacts {
+	@include rec-sprite($sprites, "contacts", false);
+	@include dimensions-with-padding(get-sprite-width($sprites, "contacts"), get-sprite-height($sprites, "contacts"), 40px, 66px, 0, 41px);
 	position: absolute;
 	top: 0;
 	right: -42px;
 	text-align: center;
-	@include rec-sprite($sprites, "contacts", false);
-	@include dimensions-with-padding(get-sprite-width($sprites, "contacts"), get-sprite-height($sprites, "contacts"), 40px, 66px, 0, 41px);
 }
 $b-header-contacts-text-margin: 6px;
-$b-header-contacts-main-color: #562409;
 .b-header-contacts-call-text, .b-header-contacts-or {
 	display: inline-block;
 	font-size: 12px;
 	color: #c96707;
 	margin-bottom: $b-header-contacts-text-margin;
 }
-@mixin b-header-contacts-main-font {
-	font-weight: bold;
-	color: $b-header-contacts-main-color;
-}
 .b-header-contacts-number {
 	display: inline-block;
 	font-size: 24px;
-	@include b-header-contacts-main-font;
+	font-weight: bold;
+	color: $color-dark-brown;
 	margin-bottom: $b-header-contacts-text-margin - 2px;
 }
 .b-header-contacts-call-back {
+	@include block-anchor($color: dark-brown);
 	display: inline-block;
 	font-size: 15px;
-	@include b-header-contacts-main-font;
+	font-weight: bold;
 	margin-bottom: $b-header-contacts-text-margin;
-	text-decoration: none;
-	border-bottom: 1px dashed $b-header-contacts-main-color;
-	&:hover, &:focus {
-		border-bottom: none;
-	}
 }
 
 .b-header-menu {
+	@include rec-sprite($sprites, "menu");
 	position: absolute;
 	left: 167px;
 	bottom: 38px;
 	text-align: center;
-	@include rec-sprite($sprites, "menu");
 	line-height: get-sprite-height($sprites, "menu") - 2px;
 }
 .b-header-menu-item {
-	$b-header-menu-item-color: #623100;
-	$b-header-menu-item-even-color: #996c14;
+	@include block-anchor(selectable);
 	font-size: 18px;
 	font-weight: bold;
-	margin: 0 6px;
-	padding: 3px 6px;
-	text-decoration: none;
-
-	& .helper {
-		color: $b-header-menu-item-color;
-		border-bottom: 1px dashed $b-header-menu-item-color;
-	}
-	&.state_even .helper {
-		color: $b-header-menu-item-even-color;
-		border-bottom-color: $b-header-menu-item-even-color;
-	}
-	&:hover .helper, &:focus .helper {
-		border-bottom: none;
-	}
-
-	&.state_selected {
-		background-color: #e5dfd0;
-		@include border-radius(6px);
-	}
 }
 

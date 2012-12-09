@@ -1,21 +1,73 @@
-$center-width: 960px;
+$legacy-support-for-ie6: false;
 
 @import "compass/support";
-$legacy-support-for-ie6: false;
 @import "compass/utilities/sprites";
+@import "compass/css3";
+@import "compass/layout/stretching";
 
-$sprites-layout:smart;
+//variables
+$center-width: 960px;
+
+//color scheme
+$color-anchor: #623100;
+$color-anchor-active: #996c14;
+$color-dark-brown: #562409;
+$color-light-pink: #ffc49c;
+
+//sprites
 $sprites: sprite-map("sprites/*.png", $layout: smart);
+$vsprites73: sprite-map("vsprites73/*.png", $layout: vertical);
 
+//site mixins
 @mixin lobster-font {
 	font-family: 'Lobster', cursive;
 }
 
-@mixin rec-sprite($map, $sprite, $dimensions: true) {
-	@include sprite($map, $sprite, $dimensions);
-	background-image: $map;
+//BLOCK: b-anchor
+//$color: default, dark-brown, light-pink
+//$mode: default, selectable
+//STATES: state_selected
+@mixin block-anchor($mode: default, $color: default) {
+	$color-default: $color-anchor;
+	@if $color == dark-brown {
+		$color-default: $color-dark-brown;
+	}
+	@else if $color == light-pink {
+		$color-default: $color-light-pink;
+	}
+	
+	text-decoration: none;
+
+	@if $mode == selectable {
+		margin: 0 6px;
+		padding: 3px 6px;
+
+		& .helper {
+			color: $color-default;
+			border-bottom: 1px dashed $color-default;
+		}
+		&:hover .helper, &:focus .helper {
+			color: $color-anchor-active;
+			border-bottom-color: $color-anchor-active;
+		}
+
+		&.state_selected {
+			background-color: #e5dfd0;
+			@include border-radius(6px);
+		}
+	}
+	@else {
+		color: $color-default;
+		border-bottom: 1px dashed $color-default;
+
+		&:hover, &:focus {
+			color: $color-anchor-active;
+			border-bottom-color: $color-anchor-active;
+		}
+	}
 }
 
+//independent functions
 @function get-sprite-width($map, $sprite){
 	@return image-width(sprite-file($map, $sprite));
 }
@@ -23,8 +75,35 @@ $sprites: sprite-map("sprites/*.png", $layout: smart);
 	@return image-height(sprite-file($map, $sprite));
 }
 
+//independent mixins
+@mixin rec-sprite($map, $sprite, $dimensions: true) {
+	@include sprite($map, $sprite, $dimensions);
+	background-image: $map;
+}
+@mixin rec-image($image) {
+	background-image: url($image);
+	width: image-width($image);
+	height: image-height($image);
+}
+
+@mixin vbg-sprite($map, $sprite) {
+	@include sprite($map, $sprite, false);
+	background-image: $map;
+	background-repeat: repeat-x;
+}
+
 @mixin margin-center {
 	margin: 0 auto;
+}
+
+@mixin abs-middle($height) {
+	top: 50%;
+	margin-top: -$height/2;
+}
+
+@mixin abs-center($width) {
+	left: 50%;
+	margin-left: -$width/2;
 }
 
 @mixin width-with-padding($width, $padding-left, $padding-right){
@@ -37,8 +116,21 @@ $sprites: sprite-map("sprites/*.png", $layout: smart);
 	padding-top: $padding-top;
 	padding-bottom: $padding-bottom;
 }
-@mixin dimensions-with-padding($width, $height, $padding-top, $padding-right, $padding-bottom, $padding-left){
+@mixin dimensions-with-padding($width, $height, $padding-top, $padding-right: false, $padding-bottom: false, $padding-left: false){
+	@if $padding-bottom == false {
+		$padding-bottom: $padding-top;
+	}
+	@if $padding-right == false {
+		$padding-right: $padding-top;
+	}
+	@if $padding-left == false {
+		$padding-left: $padding-right;
+	}
 	width: $width - $padding-left - $padding-right;
 	height: $height - $padding-top - $padding-bottom;
 	padding: $padding-top $padding-right $padding-bottom $padding-left;
+}
+
+@mixin stretch-exact($distance) {
+	@include stretch($distance, $distance, $distance, $distance);
 }

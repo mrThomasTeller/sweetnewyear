@@ -1,0 +1,14 @@
+@import "global";
+@import "compass/css3/border-radius";
+
+@font-face {
+	font-family: 'Lobster';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Lobster'), url(../resources/lobster.woff) format('woff');
+}
+
+body {
+	background-image: url(../img/pagebg.png);
+	font-family: "Trebuchet MS", arial, serif;
+}

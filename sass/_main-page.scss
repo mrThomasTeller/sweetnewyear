@@ -1,0 +1,128 @@
+@import "global";
+
+.l-page-w {
+	position: relative;
+}
+.l-page {
+	@include margin-center;
+	width: $center-width;
+	padding: 25px 0 35px;
+}
+
+.b-vkgroup {
+	@include rec-image("../dev/img/vk.png");
+	margin: 25px auto 0;
+}
+
+.b-splash-page {
+	@include stretch;
+}
+.b-splash-page-overlay {
+	@include stretch;
+	@include opacity(0.6);
+	background-color: #000000;
+}
+
+.b-splash-page-container {
+	position: relative;
+	margin: 0 auto;
+}
+
+.b-winpaper {
+	@include rec-image("../img/paperbg.png");
+	position: relative;
+	top: 2px;
+}
+.b-winpaper-close {
+	position: absolute;
+	top: 23px;
+	right: 20px;
+	font-size: 25px;
+	text-decoration: none;
+	color: $color-anchor;
+
+	&:hover, &:focus {
+		color: $color-anchor-active;
+	}
+}
+.b-winpaper-article {
+	padding: 30px 63px 0;
+	color: #3e0c0c;
+	font-size: 18px;
+	& p {
+		margin-bottom: 25px;
+	}
+}
+.b-winpaper-article-title {
+	@include lobster-font;
+	font-size: 36px;
+	font-weight: bold;
+	text-align: center;
+	color: #623100;
+	margin-bottom: 30px;
+}
+
+.b-winsmart {
+	@include border-radius(5px);
+	border: 1px solid #cfcfcf;
+	position: relative;
+	top: 60px;
+	background: url(../img/callback-bg.png);
+	
+	&.mod_callback {
+		width: 330px;
+	}
+}
+.b-winsmart-close {
+	@include rec-sprite($sprites, "close-smart-icon");
+	position: absolute;
+	right: -15px;
+	top: -17px;
+}
+.b-cbform {
+	padding: 21px 38px 22px;
+	color: #676766;
+}
+.b-cbform-title {
+	@include single-text-shadow(0px, 1px, 2px, false, white);
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 24px;
+}
+.b-cbform-input {
+	position: relative;
+	display: block;
+	margin-bottom: 14px;
+	
+	&.mod_submit {
+		@include rec-sprite($sprites, "callback-button");
+		border: none;
+		cursor: pointer;
+		margin: 0 auto;
+	}
+	
+	&.mod_text {
+		height: 52px;
+	}
+	&.mod_text .b-cbform-input-field {
+		padding-left: 10px;
+	}
+	
+	&.mod_textarea {
+		height: 94px;
+	}
+}
+.b-cbform-input-field {
+	@include border-radius(5px);
+	@include stretch(12px, 0, 0, 0);
+	@include single-box-shadow(#a8a8a8, 1px, 1px, 3px, false, true);
+	border: #dfdfdf 1px solid;
+}
+.b-cbform-input-label {
+	display: block;
+	font-size: 12px;
+	
+	& .required {
+		color: red;
+	}
+}
