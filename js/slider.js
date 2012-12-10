@@ -1,7 +1,9 @@
-define(function ()
+define(["./config.js", "./libs/Observer.js"], function (config)
 {
 	var Slider = function (element)
 	{
+		this.onChangePosition = new Observer();
+		
 		this.__element = $(element);
 	};
 
@@ -18,8 +20,17 @@ define(function ()
 			this.__setUpBehavior();
 			this.start();
 		},
-		goTo: function (position)
+		/**
+		 * @param position
+		 * @param [dontStop=false] {Boolean}
+		 */
+		goTo: function (position, dontStop)
 		{
+			if (!dontStop)
+			{
+				this.stop();
+			}
+			
 			if (this.__position === position)
 			{
 				return;
@@ -27,19 +38,27 @@ define(function ()
 			
 			this.__position = position;
 			this.__container.stop().animate({left: -this.__items.eq(this.__position).position().left});
+
+			this.onChangePosition.fire(this.__position);
 		},
-		next: function ()
+		/**
+		 * @param [dontStop=false] {Boolean}
+		 */
+		next: function (dontStop)
 		{
-			this.goTo(this.__position === this.__count - 1 ? 0 : this.__position + 1);
+			this.goTo(this.__position === this.__count - 1 ? 0 : this.__position + 1, dontStop);
 		},
-		prev: function ()
+		/**
+		 * @param [dontStop=false] {Boolean}
+		 */
+		prev: function (dontStop)
 		{
-			this.goTo(this.__position === 0 ? this.__count - 1 : this.__position - 1);
+			this.goTo(this.__position === 0 ? this.__count - 1 : this.__position - 1, dontStop);
 		},
 		start: function()
 		{
 			this.stop();
-			this.__interval = setInterval(this.next.bind(this), 3000);
+			this.__interval = setInterval(this.next.bind(this, true), config.slider.slideShowInterval);
 		},
 		stop: function ()
 		{

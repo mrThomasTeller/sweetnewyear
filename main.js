@@ -32,6 +32,22 @@ function main(slider)
 		function ViewModel()
 		{
 			this.products = result.products;
+			this.selectedProductIndex = ko.observable(0);
+
+			var enableProductIndexListening = true;
+			this.selectedProductIndex.subscribe(function (value)
+			{
+				if (enableProductIndexListening)
+				{
+					slider.goTo(value);
+				}
+			});
+			slider.onChangePosition.subscribe(function (position)
+			{
+				enableProductIndexListening = false;
+				this.selectedProductIndex(position);
+				enableProductIndexListening = true;
+			}, this);
 
 			this.getProductImage = function (relativeSrc)
 			{

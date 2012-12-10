@@ -71,8 +71,8 @@
 			</div>
 			<div class="b-products-delimiter"></div>
 			<ul class="b-prodicons" data-bind="foreach: products">
-				<li class="b-prodicons-item">
-					<a href="javascript:void(0)" class="b-prodicons-item-anchor">
+				<li class="b-prodicons-item" data-bind="css: {'state_selected': $index() === $root.selectedProductIndex()}">
+					<a href="javascript:void(0)" class="b-prodicons-item-anchor" data-bind="click: $root.selectedProductIndex.bind($root, $index())">
 						<table class="b-prodicons-item-h">
 							<tbody>
 							<tr>
