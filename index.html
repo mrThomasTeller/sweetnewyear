@@ -1,189 +1,209 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Сладкий новый год</title>
-	<link href="./css/screen.css" media="screen, projection" rel="stylesheet"/>
-	<link href="./css/print.css" media="print" rel="stylesheet"/>
-	<link href="./js/vendor/fancybox/jquery.fancybox.css" rel="stylesheet"/>
+    <title>Сладкий новый год</title>
+    <link href="./css/screen.css" media="screen, projection" rel="stylesheet"/>
+    <link href="./css/print.css" media="print" rel="stylesheet"/>
+    <link href="./js/vendor/fancybox/jquery.fancybox.css" rel="stylesheet"/>
 </head>
 <body>
-
+<div class="l-loader" style="background: white; position: absolute; width: 100%; height: 100%; z-index: 99999;">
+    <div style="background: url(img/ajax-loader.gif); position: absolute; left: 50%; top: 50%; 
+        margin-left: -16px; margin-top: -16px; width: 32px; height: 32px"></div>
+</div>
 <header class="l-header">
-	<div class="b-header">
-		<div class="b-header-bear"></div>
-		<div class="b-header-title"></div>
-		<div class="b-header-contacts">
-			<span class="b-header-contacts-call-text">Звоните нам!</span><br/>
-			<span class="b-header-contacts-number">8-923-422-32-42</span><br/>
-			<span class="b-header-contacts-or">или</span><br/>
-			<a href="#" class="b-header-contacts-call-back">ЗАКАЖИТЕ ЗВОНОК</a>
-		</div>
-		<nav class="b-header-menu">
-			<a href="#" class="b-header-menu-item state_selected state_odd nav_offer"><span class="helper">Что мы можем предложить?</span></a>
-			<a href="#" class="b-header-menu-item state_even nav_principe"><span class="helper">Принцип работы</span></a>
-			<a href="#" class="b-header-menu-item state_odd nav_order"><span class="helper">Сделать заказ</span></a>
-		</nav>
-	</div>
+    <div class="b-header">
+        <div class="b-header-bear"></div>
+        <div class="b-header-title"></div>
+        <div class="b-header-contacts">
+            <span class="b-header-contacts-call-text">Звоните нам!</span><br/>
+            <span class="b-header-contacts-number">8-923-422-32-42</span><br/>
+            <span class="b-header-contacts-or">или</span><br/>
+            <a href="javascript:void(0)" class="b-header-contacts-call-back" data-bind="firstNavigation: 'order'">ЗАКАЖИТЕ ЗВОНОК</a>
+        </div>
+        <nav class="b-header-menu">
+            <a href="javascript:void(0)" class="b-header-menu-item state_selected state_odd nav_offer" data-bind="firstNavigation: 'offer'">
+                <span class="helper">Что мы можем предложить?</span>
+            </a>
+            <a href="javascript:void(0)" class="b-header-menu-item state_even nav_principe" data-bind="firstNavigation: 'principe'">
+                <span class="helper">Принцип работы</span>
+            </a>
+            <a href="javascript:void(0)" class="b-header-menu-item state_odd nav_order" data-bind="firstNavigation: 'order'">
+                <span class="helper">Сделать заказ</span>
+            </a>
+        </nav>
+    </div>
 </header>
 <div class="l-page-w">
-	<div class="l-page">
-		<div class="b-products">
-			<div class="b-products-slider">
-				<a href="javascript:void(0)" class="b-products-slider-button b-products-slider-button-prev"></a>
-				<a href="javascript:void(0)" class="b-products-slider-button b-products-slider-button-next"></a>
+    <div class="l-page">
+        <div class="b-products">
+            <div class="b-products-slider">
+                <a href="javascript:void(0)" class="b-products-slider-button b-products-slider-button-prev"></a>
+                <a href="javascript:void(0)" class="b-products-slider-button b-products-slider-button-next"></a>
 
-				<div class="w-b-products-slider-items">
-					<div class="b-products-slider-items" data-bind="foreach: products">
-						<article class="b-products-slider-item b-product">
-							<div class="b-prodimages">
-								<figure class="b-prodimages-main">
-									<img class="b-prodimages-main-img" data-bind="attr: {src: $root.getProductImage(images.main)}"/>
-								</figure>
-								<ul class="b-prodimages-icons" data-bind="foreach: images.add, fancyboxGroup: true">
-									<li class="b-prodimages-icons-item">
-										<a class="b-prodimages-icons-item-anchor" data-bind="attr: {href: $root.getProductImage(full), title: $data.title}">
-											<img class="b-prodimages-icons-item-img"  data-bind="attr: {src: $root.getProductImage(icon)}"/>
-										</a>
-									</li>
-								</ul>
-							</div>
+                <div class="w-b-products-slider-items">
+                    <div class="b-products-slider-items" data-bind="foreach: products">
+                        <article class="b-products-slider-item b-product">
+                            <div class="b-prodimages">
+                                <figure class="b-prodimages-main">
+                                    <img class="b-prodimages-main-img"
+                                         data-bind="attr: {src: $root.getProductImage(images.main)}"/>
+                                </figure>
+                                <ul class="b-prodimages-icons" data-bind="foreach: images.add, fancyboxGroup: true">
+                                    <li class="b-prodimages-icons-item">
+                                        <a class="b-prodimages-icons-item-anchor"
+                                           data-bind="attr: {href: $root.getProductImage(full), title: $data.title}">
+                                            <img class="b-prodimages-icons-item-img"
+                                                 data-bind="attr: {src: $root.getProductImage(icon)}"/>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
 
-							<div class="b-product-right">
-								<h1 class="b-product-title">
-									<span class="b-product-title-primary" data-bind="text: title.primary"></span>
-									<!-- ko if: !!title.secondary -->
-									<span class="b-product-title-secondary" data-bind="text: title.secondary"></span>
-									<!-- /ko -->
-								</h1>
+                            <div class="b-product-right">
+                                <h1 class="b-product-title">
+                                    <span class="b-product-title-primary" data-bind="text: title.primary"></span>
+                                    <!-- ko if: !!title.secondary -->
+                                    <span class="b-product-title-secondary" data-bind="text: title.secondary"></span>
+                                    <!-- /ko -->
+                                </h1>
 
-								<section class="b-product-description" data-bind="html: description"></section>
+                                <section class="b-product-description" data-bind="html: description"></section>
 
-								<div class="b-product-label">
-									<div class="b-product-label-price" data-bind="text: price"></div>
-									<!-- ko if: !!$data.package -->
-									<div class="b-product-label-weight" data-bind="text: package"></div>
-									<!-- /ko -->
-								</div>
-							</div>
-						</article>
-					</div>
-				</div>
-			</div>
-			<div class="b-products-delimiter"></div>
-			<ul class="b-prodicons" data-bind="foreach: products">
-				<li class="b-prodicons-item" data-bind="css: {'state_selected': $index() === $root.selectedProductIndex()}">
-					<a href="javascript:void(0)" class="b-prodicons-item-anchor" data-bind="click: $root.selectedProductIndex.bind($root, $index())">
-						<table class="b-prodicons-item-h">
-							<tbody>
-							<tr>
-								<td class="b-prodicons-item-h-h">
-									<img class="b-prodicons-item-img" data-bind="attr: {src: $root.getProductImage(images.preview)}"/>
-								</td>
-							</tr>
-							</tbody>
-						</table>
-					</a>
-				</li>
-			</ul>
-			<div class="b-products-delimiter"></div>
-		</div>
+                                <div class="b-product-label">
+                                    <div class="b-product-label-price" data-bind="text: price"></div>
+                                    <!-- ko if: !!$data.package -->
+                                    <div class="b-product-label-weight" data-bind="text: package"></div>
+                                    <!-- /ko -->
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="b-products-delimiter"></div>
+            <ul class="b-prodicons" data-bind="foreach: products">
+                <li class="b-prodicons-item"
+                    data-bind="css: {'state_selected': $index() === $root.selectedProductIndex()}">
+                    <a href="javascript:void(0)" class="b-prodicons-item-anchor"
+                       data-bind="click: $root.selectedProductIndex.bind($root, $index())">
+                        <table class="b-prodicons-item-h">
+                            <tbody>
+                            <tr>
+                                <td class="b-prodicons-item-h-h">
+                                    <img class="b-prodicons-item-img"
+                                         data-bind="attr: {src: $root.getProductImage(images.preview)}"/>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </a>
+                </li>
+            </ul>
+            <div class="b-products-delimiter"></div>
+        </div>
 
-		<div class="b-vkgroup"></div>
-	</div>
-	<div class="b-splash-page" style="display: none">
-		<div class="b-splash-page-overlay"></div>
-		<div class="b-splash-page-container b-winpaper">
-			<a href="javascript:void(0)" class="b-winpaper-close">✖</a>
-			<article class="b-winpaper-article">
-				<h1 class="b-winpaper-article-title">Что мы можем предложить?</h1>
+        <div class="b-vkgroup"></div>
+    </div>
+    <div class="b-splash-page" data-bind="visible: page() === 'offer'">
+        <div class="b-splash-page-overlay"></div>
+        <div class="b-splash-page-container b-winpaper">
+            <a href="javascript:void(0)" class="b-winpaper-close" data-bind="click: goToMainPage">✖</a>
+            <article class="b-winpaper-article">
+                <h1 class="b-winpaper-article-title">Что мы можем предложить?</h1>
 
-				<p>Дорогие друзья!</p>
+                <p>Дорогие друзья!</p>
 
-				<p>
-					Давайте знакомиться, я — Егор, продаю мёд с пасеки своего дяди, а ещё с пасеки друзей.
-					Мёд гречишный, зрелый. Пасека находится на Алтае в Целинном районе.
-					Мёд цветочный, зрелый, жидкий. Алтайский район, Алтая. Мёд липовый, сметанообразный. Хабаровский край.
-				</p>
+                <p>
+                    Давайте знакомиться, я — Егор, продаю мёд с пасеки своего дяди, а ещё с пасеки друзей.
+                    Мёд гречишный, зрелый. Пасека находится на Алтае в Целинном районе.
+                    Мёд цветочный, зрелый, жидкий. Алтайский район, Алтая. Мёд липовый, сметанообразный. Хабаровский
+                    край.
+                </p>
 
-				<p style="text-align: center">
-					Стоимость гречишного и цветочного меда:<br/>
-					4 кг = 1500 рублей,<br/>
-					2 кг = 800 рублей,<br/>
-					0,5 кг = 250 рублей.
-				</p>
+                <p style="text-align: center">
+                    Стоимость гречишного и цветочного меда:<br/>
+                    4 кг = 1500 рублей,<br/>
+                    2 кг = 800 рублей,<br/>
+                    0,5 кг = 250 рублей.
+                </p>
 
-				<p style="text-align: center">
-					<img src="resources/img/honey-end.png"/>
-				</p>
+                <p style="text-align: center">
+                    <img src="resources/img/honey-end.png"/>
+                </p>
 
-				<p style="text-align: center">
-					Стоимость липового мёда:<br/>
-					4 кг = 2000 рублей,<br/>
-					2 кг = 1100 рублей,<br/>
-					0,5 кг = 300 рублей.
-				</p>
+                <p style="text-align: center">
+                    Стоимость липового мёда:<br/>
+                    4 кг = 2000 рублей,<br/>
+                    2 кг = 1100 рублей,<br/>
+                    0,5 кг = 300 рублей.
+                </p>
 
-				<p>
-					Доставка до двери на работу и домой — бесплатно. Даю попробовать, не понравится, имеете право отказаться. Работаю с коллективами, приглашайте на работу, угощу всех мёдом просто так. Продаю в долг до зарплаты. Ищу помощников в реализации мёда.
-				</p>
+                <p>
+                    Доставка до двери на работу и домой — бесплатно. Даю попробовать, не понравится, имеете право
+                    отказаться. Работаю с коллективами, приглашайте на работу, угощу всех мёдом просто так. Продаю в
+                    долг до зарплаты. Ищу помощников в реализации мёда.
+                </p>
 
-				<p>
-					Звоните, всё расскажу и проконсультирую по вопросам мёда:<br/>
-					8-923-422-32-42, 8-952-889-21-08.
-				</p>
+                <p>
+                    Звоните, всё расскажу и проконсультирую по вопросам мёда:<br/>
+                    8-923-422-32-42, 8-952-889-21-08.
+                </p>
 
-				<p>
-					За качество мёда — ответил.
-				</p>
+                <p>
+                    За качество мёда — ответил.
+                </p>
 
-				<p>
-					Мы предоставляем продукт в его естественном виде. Задача поставленная перед нами, это стабильно снабжать жителей города Мёдом, тем самым который лечит.<br/>
-					С уважением, Егор и команда.
-				</p>
-			</article>
-		</div>
-	</div>
-	<div class="b-splash-page" style="display: none">
-		<div class="b-splash-page-overlay"></div>
-		<div class="b-splash-page-container b-winsmart mod_callback">
-			<a href="javascript:void(0)" class="b-winsmart-close"></a>
-			<div class="b-winsmart-content">
-				<form class="b-cbform">
-					<h1 class="b-cbform-title">Форма обратной связи</h1>
-					<label class="b-cbform-input mod_text">
-						<span class="b-cbform-input-label">Ваше имя:</span>
-						<input name="name" class="b-cbform-input-field">
-					</label>
-					<label class="b-cbform-input mod_text">
-						<span class="b-cbform-input-label">Телефон<span class="required">*</span>:</span>
-						<input name="phone" class="b-cbform-input-field">
-					</label>
-					<label class="b-cbform-input mod_textarea">
-						<span class="b-cbform-input-label">Дополнительная информация:</span>
-						<textarea name="additional" class="b-cbform-input-field"></textarea>
-					</label>
-					<input class="b-cbform-input mod_submit" type="submit" value="">
-				</form>
-			</div>
-		</div>
-	</div>
-	
+                <p>
+                    Мы предоставляем продукт в его естественном виде. Задача поставленная перед нами, это стабильно
+                    снабжать жителей города Мёдом, тем самым который лечит.<br/>
+                    С уважением, Егор и команда.
+                </p>
+            </article>
+        </div>
+    </div>
+    <div class="b-splash-page" data-bind="visible: page() === 'order'">
+        <div class="b-splash-page-overlay"></div>
+        <div class="b-splash-page-container b-winsmart mod_callback">
+            <a href="javascript:void(0)" class="b-winsmart-close" data-bind="click: goToMainPage"></a>
+
+            <div class="b-winsmart-content">
+                <form class="b-cbform">
+                    <h1 class="b-cbform-title">Форма обратной связи</h1>
+                    <label class="b-cbform-input mod_text">
+                        <span class="b-cbform-input-label">Ваше имя:</span>
+                        <input name="name" class="b-cbform-input-field">
+                    </label>
+                    <label class="b-cbform-input mod_text">
+                        <span class="b-cbform-input-label">Телефон<span class="required">*</span>:</span>
+                        <input name="phone" class="b-cbform-input-field">
+                    </label>
+                    <label class="b-cbform-input mod_textarea">
+                        <span class="b-cbform-input-label">Дополнительная информация:</span>
+                        <textarea name="additional" class="b-cbform-input-field"></textarea>
+                    </label>
+                    <input class="b-cbform-input mod_submit" type="submit" value="">
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <footer class="l-footer">
-	<div class="b-footer">
-		<div class="b-footer-honey"></div>
-		<div class="b-footer-text">Есть медок — полезные подарки к любому празднику!</div>
-		<nav class="b-footer-nav">
-			<a href="#" class="b-footer-nav-item nav_offer">Что мы можем предложить?</a>
-			<a href="#" class="b-footer-nav-item nav_principe">Принцип работы</a>
-			<a href="#" class="b-footer-nav-item nav_order">Сделать заказ</a>
-		</nav>
-		<a class="b-footer-email" href="mailto://estmedok@gmail.com"><span class="b-footer-email-icon"></span> <span
-			class="helper">estmedok@gmail.com</span></a>
+    <div class="b-footer">
+        <div class="b-footer-honey"></div>
+        <div class="b-footer-text">Есть медок — полезные подарки к любому празднику!</div>
+        <nav class="b-footer-nav">
+            <a href="javascript:void(0)" class="b-footer-nav-item nav_offer" data-bind="firstNavigation: 'offer'">Что мы можем предложить?</a>
+            <a href="javascript:void(0)" class="b-footer-nav-item nav_principe" data-bind="firstNavigation: 'principe'">Принцип работы</a>
+            <a href="javascript:void(0)" class="b-footer-nav-item nav_order" data-bind="firstNavigation: 'order'">Сделать заказ</a>
+        </nav>
+        <a class="b-footer-email" href="mailto://estmedok@gmail.com"><span class="b-footer-email-icon"></span> <span
+                class="helper">estmedok@gmail.com</span></a>
 
-		<div class="b-footer-copyright">2012 © Все права защищены</div>
-	</div>
+        <div class="b-footer-copyright">2012 © Все права защищены</div>
+    </div>
 </footer>
 <script src="js/vendor/require.js"></script>
 <script src="main.js"></script>

@@ -25,6 +25,17 @@ function main(slider)
 		};
 	})();
 
+	ko.bindingHandlers.firstNavigation = {
+		init: function (element, valueAccessor, allBindingsAccessor, viewModel)
+		{
+			$(element).click(function (){ viewModel.page(valueAccessor()) });
+		},
+		update: function (element, valueAccessor, allBindingsAccessor, viewModel)
+		{
+			$(element).toggleClass("state_selected", valueAccessor() === viewModel.page());
+		}
+	};
+
 	$.get("resources/data.json", function (result)
 	{
 		result = typeof result === "string" ? JSON.parse(result) : result;
@@ -33,7 +44,19 @@ function main(slider)
 		{
 			this.products = result.products;
 			this.selectedProductIndex = ko.observable(0);
+			this.page = ko.observable("main"); //offer, principe, order
 
+			this.getProductImage = function (relativeSrc)
+			{
+				return "resources/products/" + relativeSrc;
+			};
+			
+			this.goToMainPage = function()
+			{
+				this.page("main");
+			};
+
+			//productIndex binding
 			var enableProductIndexListening = true;
 			this.selectedProductIndex.subscribe(function (value)
 			{
@@ -49,14 +72,26 @@ function main(slider)
 				enableProductIndexListening = true;
 			}, this);
 
-			this.getProductImage = function (relativeSrc)
+			//page binding
+			this.page.subscribe(function (page)
 			{
-				return "resources/products/" + relativeSrc;
-			}
+				if (page === "main")
+				{
+					slider.start();
+				}
+				else
+				{
+					slider.stop();
+				}
+			});
 		}
 
 		ko.applyBindings(new ViewModel());
-		setTimeout(slider.init.bind(slider), 0);
+		setTimeout(function ()
+		{
+			slider.init(slider);
+			$(".l-loader").fadeOut("fast");
+		}, 0);
 	});
 }
 
