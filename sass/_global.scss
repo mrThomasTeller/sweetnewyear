@@ -54,6 +54,9 @@ $vsprites73: sprite-map("vsprites73/*.png", $layout: vertical);
 		&.state_selected {
 			background-color: #e5dfd0;
 			@include border-radius(6px);
+			& .helper {
+				border-bottom: none;
+			}
 		}
 	}
 	@else {

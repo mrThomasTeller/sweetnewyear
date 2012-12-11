@@ -98,6 +98,7 @@ body {
 
 /* line 17, ../sass/_header.scss */
 .b-header-bear {
+  display: block;
   position: absolute;
   left: 12px;
   top: 32px;
@@ -107,7 +108,7 @@ body {
   background-image: url('../img/sprites-s3f3e67e010.png');
 }
 
-/* line 24, ../sass/_header.scss */
+/* line 25, ../sass/_header.scss */
 .b-header-title {
   position: absolute;
   top: 73px;
@@ -118,7 +119,7 @@ body {
   background-image: url('../img/sprites-s3f3e67e010.png');
 }
 
-/* line 31, ../sass/_header.scss */
+/* line 32, ../sass/_header.scss */
 .b-header-contacts {
   background-position: -451px -254px;
   background-image: url('../img/sprites-s3f3e67e010.png');
@@ -131,7 +132,7 @@ body {
   text-align: center;
 }
 
-/* line 40, ../sass/_header.scss */
+/* line 41, ../sass/_header.scss */
 .b-header-contacts-call-text, .b-header-contacts-or {
   display: inline-block;
   font-size: 12px;
@@ -139,7 +140,7 @@ body {
   margin-bottom: 6px;
 }
 
-/* line 46, ../sass/_header.scss */
+/* line 47, ../sass/_header.scss */
 .b-header-contacts-number {
   display: inline-block;
   font-size: 24px;
@@ -148,7 +149,7 @@ body {
   margin-bottom: 4px;
 }
 
-/* line 53, ../sass/_header.scss */
+/* line 54, ../sass/_header.scss */
 .b-header-contacts-call-back {
   text-decoration: none;
   color: #562409;
@@ -158,13 +159,13 @@ body {
   font-weight: bold;
   margin-bottom: 6px;
 }
-/* line 63, ../sass/_global.scss */
+/* line 66, ../sass/_global.scss */
 .b-header-contacts-call-back:hover, .b-header-contacts-call-back:focus {
   color: #996c14;
   border-bottom-color: #996c14;
 }
 
-/* line 61, ../sass/_header.scss */
+/* line 62, ../sass/_header.scss */
 .b-header-menu {
   background-position: 0 -110px;
   height: 42px;
@@ -177,7 +178,7 @@ body {
   line-height: 40px;
 }
 
-/* line 69, ../sass/_header.scss */
+/* line 70, ../sass/_header.scss */
 .b-header-menu-item {
   text-decoration: none;
   margin: 0 6px;
@@ -204,6 +205,10 @@ body {
   -o-border-radius: 6px;
   border-radius: 6px;
 }
+/* line 57, ../sass/_global.scss */
+.b-header-menu-item.state_selected .helper {
+  border-bottom: none;
+}
 
 /* line 3, ../sass/_main-page.scss */
 .l-page-w {
@@ -218,10 +223,7 @@ body {
 }
 
 /* line 12, ../sass/_main-page.scss */
-.b-vkgroup {
-  background-image: url("../dev/img/vk.png");
-  width: 500px;
-  height: 220px;
+#vk_groups {
   margin: 25px auto 0;
 }
 
@@ -252,7 +254,7 @@ body {
   margin: 0 auto;
 }
 
-/* line 31, ../sass/_main-page.scss */
+/* line 32, ../sass/_main-page.scss */
 .b-winpaper {
   background-image: url("../img/paperbg.png");
   width: 891px;
@@ -261,7 +263,7 @@ body {
   top: 2px;
 }
 
-/* line 36, ../sass/_main-page.scss */
+/* line 37, ../sass/_main-page.scss */
 .b-winpaper-close {
   position: absolute;
   top: 23px;
@@ -270,23 +272,23 @@ body {
   text-decoration: none;
   color: #623100;
 }
-/* line 44, ../sass/_main-page.scss */
+/* line 45, ../sass/_main-page.scss */
 .b-winpaper-close:hover, .b-winpaper-close:focus {
   color: #996c14;
 }
 
-/* line 48, ../sass/_main-page.scss */
+/* line 49, ../sass/_main-page.scss */
 .b-winpaper-article {
   padding: 30px 63px 0;
   color: #3e0c0c;
   font-size: 18px;
 }
-/* line 52, ../sass/_main-page.scss */
+/* line 53, ../sass/_main-page.scss */
 .b-winpaper-article p {
   margin-bottom: 25px;
 }
 
-/* line 56, ../sass/_main-page.scss */
+/* line 57, ../sass/_main-page.scss */
 .b-winpaper-article-title {
   font-family: 'Lobster', cursive;
   font-size: 36px;
@@ -296,7 +298,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* line 65, ../sass/_main-page.scss */
+/* line 67, ../sass/_main-page.scss */
 .b-winsmart {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -305,15 +307,15 @@ body {
   border-radius: 5px;
   border: 1px solid #cfcfcf;
   position: relative;
-  top: 60px;
+  top: 30px;
   background: url(../img/callback-bg.png);
 }
-/* line 72, ../sass/_main-page.scss */
+/* line 74, ../sass/_main-page.scss */
 .b-winsmart.mod_callback {
   width: 330px;
 }
 
-/* line 76, ../sass/_main-page.scss */
+/* line 78, ../sass/_main-page.scss */
 .b-winsmart-close {
   background-position: 0 0;
   height: 34px;
@@ -324,13 +326,26 @@ body {
   top: -17px;
 }
 
-/* line 82, ../sass/_main-page.scss */
+/* line 84, ../sass/_main-page.scss */
 .b-cbform {
   padding: 21px 38px 22px;
   color: #676766;
 }
 
-/* line 86, ../sass/_main-page.scss */
+/* line 88, ../sass/_main-page.scss */
+.b-cbform-success {
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  text-align: center;
+  left: 0;
+  font-size: 30px;
+  right: 0;
+  padding: 0 10px;
+  color: green;
+}
+
+/* line 99, ../sass/_main-page.scss */
 .b-cbform-title {
   text-shadow: 0px 1px 2px white;
   font-size: 24px;
@@ -338,13 +353,14 @@ body {
   margin-bottom: 24px;
 }
 
-/* line 92, ../sass/_main-page.scss */
+/* line 105, ../sass/_main-page.scss */
 .b-cbform-input {
   position: relative;
   display: block;
-  margin-bottom: 14px;
+  font-size: 20px;
+  margin-bottom: 23px;
 }
-/* line 97, ../sass/_main-page.scss */
+/* line 111, ../sass/_main-page.scss */
 .b-cbform-input.mod_submit {
   background-position: -34px 0;
   height: 41px;
@@ -354,20 +370,29 @@ body {
   cursor: pointer;
   margin: 0 auto;
 }
-/* line 104, ../sass/_main-page.scss */
+/* line 118, ../sass/_main-page.scss */
 .b-cbform-input.mod_text {
   height: 52px;
 }
-/* line 107, ../sass/_main-page.scss */
+/* line 121, ../sass/_main-page.scss */
 .b-cbform-input.mod_text .b-cbform-input-field {
   padding-left: 10px;
+  font-size: 25px;
 }
-/* line 111, ../sass/_main-page.scss */
+/* line 126, ../sass/_main-page.scss */
 .b-cbform-input.mod_textarea {
   height: 94px;
 }
+/* line 130, ../sass/_main-page.scss */
+.b-cbform-input label.error {
+  position: absolute;
+  font-size: 12px;
+  bottom: -13px;
+  color: red;
+  right: 5px;
+}
 
-/* line 115, ../sass/_main-page.scss */
+/* line 138, ../sass/_main-page.scss */
 .b-cbform-input-field {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -384,20 +409,24 @@ body {
   box-shadow: inset #a8a8a8 1px 1px 3px;
   border: #dfdfdf 1px solid;
 }
-/* line 122, ../sass/_main-page.scss */
+/* line 145, ../sass/_main-page.scss */
 .b-cbform-input-field:focus {
   -webkit-box-shadow: inset #a8a8a8 1px 1px 3px, #fdff5c 0 0 10px;
   -moz-box-shadow: inset #a8a8a8 1px 1px 3px, #fdff5c 0 0 10px;
   box-shadow: inset #a8a8a8 1px 1px 3px, #fdff5c 0 0 10px;
   outline: none;
 }
+/* line 149, ../sass/_main-page.scss */
+.b-cbform-input-field.error {
+  background-color: #ff9890;
+}
 
-/* line 127, ../sass/_main-page.scss */
+/* line 153, ../sass/_main-page.scss */
 .b-cbform-input-label {
   display: block;
   font-size: 12px;
 }
-/* line 131, ../sass/_main-page.scss */
+/* line 157, ../sass/_main-page.scss */
 .b-cbform-input-label .required {
   color: red;
 }
@@ -657,7 +686,7 @@ body {
   font-size: 14px;
   margin: 0 20px;
 }
-/* line 63, ../sass/_global.scss */
+/* line 66, ../sass/_global.scss */
 .b-footer-nav-item:hover, .b-footer-nav-item:focus {
   color: #996c14;
   border-bottom-color: #996c14;
