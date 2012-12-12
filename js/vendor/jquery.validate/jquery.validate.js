@@ -23,7 +23,9 @@ $.extend($.fn, {
 		}
 
 		// Add novalidate tag if HTML5.
-		this.attr('novalidate', 'novalidate');
+		//{REMOVED (ie7 bug)
+//		this.attr('novalidate', 'novalidate');
+		//}REMOVED
 
 		validator = new $.validator( options, this[0] );
 		$.data(this[0], 'validator', validator);

@@ -9,6 +9,9 @@
 	padding: 25px 0 35px;
 }
 
+.b-vkgroup {
+	height: 220px;
+}
 #vk_groups {
 	margin: 25px auto 0;
 }
@@ -126,6 +129,10 @@
 	&.mod_textarea {
 		height: 94px;
 	}
+	&.mod_textarea .b-cbform-input-field{
+		height: 72px;
+		overflow: auto;
+	}
 	
 	& label.error {
 		position: absolute;
@@ -138,6 +145,7 @@
 .b-cbform-input-field {
 	$b-cbform-input-field-shadow: inset #a8a8a8 1px 1px 3px;
 	@include border-radius(5px);
+	width: 100%;
 	@include stretch(12px, 0, 0, 0);
 	@include box-shadow($b-cbform-input-field-shadow);
 	border: #dfdfdf 1px solid;

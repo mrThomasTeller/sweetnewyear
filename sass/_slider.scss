@@ -35,26 +35,47 @@
 	margin-left: 38px;
 	height: 100%;
 	float: left;
+	position: relative;
 }
 
+$b-prodimages-icon-height: 33px;
+$b-prodimages-image-border: 1px;
+@mixin prodimage-image-border {
+	border: $b-prodimages-image-border solid #866848;
+}
 .b-prodimages {
 	position: relative;
 	float: left;
-	width: 225px;
+	width: 330px;
+	height: 265px;
+}
+.w-b-prodimages-main {
+	width: 100%;
+	height: 224px;
+}
+.b-prodimages-main {
+	text-align: center;
+}
+.b-prodimages-main-img {
+	@include prodimage-image-border;
 }
 .b-prodimages-icons {
 	position: absolute;
-	top: 9px;
-	right: 0px;
-	width: 43px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: $b-prodimages-icon-height + 2 * $b-prodimages-image-border;
 	list-style: none;
+	text-align: center;
 }
 .b-prodimages-icons-item {
-	@include border-radius(3px);
-	display: block;
-	border: 1px solid #866848;
-	margin-bottom: 6px;
-	padding: 2px 0;
+	@include prodimage-image-border;
+	display: inline-block;
+	margin: 0 5px;
+}
+.b-prodimages-icons-item-h {
+	width: 50px;
+	height: $b-prodimages-icon-height;
 }
 .b-prodimages-icons-item-anchor {
 	display: block;
@@ -64,18 +85,21 @@
 	display: block;
 }
 
+$b-product-title-height: 116px;
 .b-product-right {
-	position: relative;
-	margin-left: 275px;
-	height: 100%;
+	position: absolute;
+	margin-left: 363px;
+	top: $b-product-title-height;
+	bottom: 0;
 }
 
 .b-product-title {
 	color: #633100;
 	font-weight: bold;
 	font-style: italic;
-	margin-bottom: 12px;
 	font-family: 'Times New Roman', serif;
+	text-align: center;
+	height: $b-product-title-height;
 }
 .b-product-title-primary {
 	display: block;
@@ -88,7 +112,7 @@
 }
 
 .b-product-description {
-	line-height: 27px;
+	line-height: 26px;
 	font-size: 22px;
 	color: #3a190a;
 }
@@ -97,8 +121,9 @@
 	@include rec-sprite($sprites, "product-label");
 	@include single-text-shadow(0px, 1px, 2px, false, #9d4e00);
 	position: absolute;
-	bottom: 23px;
+	//top: 185px;
 	left: -9px;
+	bottom: 4px;
 	color: #602f00;
 	font-family: 'Tahoma', 'Trebuchet MS', serif;
 }
@@ -128,8 +153,8 @@
 	list-style: none;
 }
 
-$b-prodicons-item-width: 75px;
-$b-prodicons-item-height: 110px;
+$b-prodicons-item-width: 115px;
+$b-prodicons-item-height: 78px;
 $b-prodicons-item-border: 5px;
 .b-prodicons-item {
 	display: inline-block;
@@ -147,6 +172,7 @@ $b-prodicons-item-border: 5px;
 	height: $b-prodicons-item-height - $b-prodicons-item-border * 2;
 	background-color: white;
 }
-.b-prodicons-item-h-h {
-	text-align: center;
+.b-prodicons-item-img {
+	@include margin-center;
+	display: block;
 }

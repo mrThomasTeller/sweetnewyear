@@ -223,11 +223,16 @@ body {
 }
 
 /* line 12, ../sass/_main-page.scss */
+.b-vkgroup {
+  height: 220px;
+}
+
+/* line 15, ../sass/_main-page.scss */
 #vk_groups {
   margin: 25px auto 0;
 }
 
-/* line 17, ../sass/_main-page.scss */
+/* line 20, ../sass/_main-page.scss */
 .b-splash-page {
   position: absolute;
   top: 0;
@@ -236,7 +241,7 @@ body {
   right: 0;
 }
 
-/* line 20, ../sass/_main-page.scss */
+/* line 23, ../sass/_main-page.scss */
 .b-splash-page-overlay {
   position: absolute;
   top: 0;
@@ -248,13 +253,13 @@ body {
   background-color: #000000;
 }
 
-/* line 26, ../sass/_main-page.scss */
+/* line 29, ../sass/_main-page.scss */
 .b-splash-page-container {
   position: relative;
   margin: 0 auto;
 }
 
-/* line 32, ../sass/_main-page.scss */
+/* line 35, ../sass/_main-page.scss */
 .b-winpaper {
   background-image: url("../img/paperbg.png");
   width: 891px;
@@ -263,7 +268,7 @@ body {
   top: 2px;
 }
 
-/* line 37, ../sass/_main-page.scss */
+/* line 40, ../sass/_main-page.scss */
 .b-winpaper-close {
   position: absolute;
   top: 23px;
@@ -272,23 +277,23 @@ body {
   text-decoration: none;
   color: #623100;
 }
-/* line 45, ../sass/_main-page.scss */
+/* line 48, ../sass/_main-page.scss */
 .b-winpaper-close:hover, .b-winpaper-close:focus {
   color: #996c14;
 }
 
-/* line 49, ../sass/_main-page.scss */
+/* line 52, ../sass/_main-page.scss */
 .b-winpaper-article {
   padding: 30px 63px 0;
   color: #3e0c0c;
   font-size: 18px;
 }
-/* line 53, ../sass/_main-page.scss */
+/* line 56, ../sass/_main-page.scss */
 .b-winpaper-article p {
   margin-bottom: 25px;
 }
 
-/* line 57, ../sass/_main-page.scss */
+/* line 60, ../sass/_main-page.scss */
 .b-winpaper-article-title {
   font-family: 'Lobster', cursive;
   font-size: 36px;
@@ -298,7 +303,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* line 67, ../sass/_main-page.scss */
+/* line 70, ../sass/_main-page.scss */
 .b-winsmart {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -310,12 +315,12 @@ body {
   top: 30px;
   background: url(../img/callback-bg.png);
 }
-/* line 74, ../sass/_main-page.scss */
+/* line 77, ../sass/_main-page.scss */
 .b-winsmart.mod_callback {
   width: 330px;
 }
 
-/* line 78, ../sass/_main-page.scss */
+/* line 81, ../sass/_main-page.scss */
 .b-winsmart-close {
   background-position: 0 0;
   height: 34px;
@@ -326,13 +331,13 @@ body {
   top: -17px;
 }
 
-/* line 84, ../sass/_main-page.scss */
+/* line 87, ../sass/_main-page.scss */
 .b-cbform {
   padding: 21px 38px 22px;
   color: #676766;
 }
 
-/* line 88, ../sass/_main-page.scss */
+/* line 91, ../sass/_main-page.scss */
 .b-cbform-success {
   position: absolute;
   top: 50%;
@@ -345,7 +350,7 @@ body {
   color: green;
 }
 
-/* line 99, ../sass/_main-page.scss */
+/* line 102, ../sass/_main-page.scss */
 .b-cbform-title {
   text-shadow: 0px 1px 2px white;
   font-size: 24px;
@@ -353,14 +358,14 @@ body {
   margin-bottom: 24px;
 }
 
-/* line 105, ../sass/_main-page.scss */
+/* line 108, ../sass/_main-page.scss */
 .b-cbform-input {
   position: relative;
   display: block;
   font-size: 20px;
   margin-bottom: 23px;
 }
-/* line 111, ../sass/_main-page.scss */
+/* line 114, ../sass/_main-page.scss */
 .b-cbform-input.mod_submit {
   background-position: -34px 0;
   height: 41px;
@@ -370,20 +375,25 @@ body {
   cursor: pointer;
   margin: 0 auto;
 }
-/* line 118, ../sass/_main-page.scss */
+/* line 121, ../sass/_main-page.scss */
 .b-cbform-input.mod_text {
   height: 52px;
 }
-/* line 121, ../sass/_main-page.scss */
+/* line 124, ../sass/_main-page.scss */
 .b-cbform-input.mod_text .b-cbform-input-field {
   padding-left: 10px;
   font-size: 25px;
 }
-/* line 126, ../sass/_main-page.scss */
+/* line 129, ../sass/_main-page.scss */
 .b-cbform-input.mod_textarea {
   height: 94px;
 }
-/* line 130, ../sass/_main-page.scss */
+/* line 132, ../sass/_main-page.scss */
+.b-cbform-input.mod_textarea .b-cbform-input-field {
+  height: 72px;
+  overflow: auto;
+}
+/* line 137, ../sass/_main-page.scss */
 .b-cbform-input label.error {
   position: absolute;
   font-size: 12px;
@@ -392,13 +402,14 @@ body {
   right: 5px;
 }
 
-/* line 138, ../sass/_main-page.scss */
+/* line 145, ../sass/_main-page.scss */
 .b-cbform-input-field {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
+  width: 100%;
   position: absolute;
   top: 12px;
   bottom: 0;
@@ -409,24 +420,24 @@ body {
   box-shadow: inset #a8a8a8 1px 1px 3px;
   border: #dfdfdf 1px solid;
 }
-/* line 145, ../sass/_main-page.scss */
+/* line 153, ../sass/_main-page.scss */
 .b-cbform-input-field:focus {
   -webkit-box-shadow: inset #a8a8a8 1px 1px 3px, #fdff5c 0 0 10px;
   -moz-box-shadow: inset #a8a8a8 1px 1px 3px, #fdff5c 0 0 10px;
   box-shadow: inset #a8a8a8 1px 1px 3px, #fdff5c 0 0 10px;
   outline: none;
 }
-/* line 149, ../sass/_main-page.scss */
+/* line 157, ../sass/_main-page.scss */
 .b-cbform-input-field.error {
   background-color: #ff9890;
 }
 
-/* line 153, ../sass/_main-page.scss */
+/* line 161, ../sass/_main-page.scss */
 .b-cbform-input-label {
   display: block;
   font-size: 12px;
 }
-/* line 157, ../sass/_main-page.scss */
+/* line 165, ../sass/_main-page.scss */
 .b-cbform-input-label .required {
   color: red;
 }
@@ -483,84 +494,106 @@ body {
   margin-left: 38px;
   height: 100%;
   float: left;
+  position: relative;
 }
 
-/* line 40, ../sass/_slider.scss */
+/* line 46, ../sass/_slider.scss */
 .b-prodimages {
   position: relative;
   float: left;
-  width: 225px;
-}
-
-/* line 45, ../sass/_slider.scss */
-.b-prodimages-icons {
-  position: absolute;
-  top: 9px;
-  right: 0px;
-  width: 43px;
-  list-style: none;
+  width: 330px;
+  height: 265px;
 }
 
 /* line 52, ../sass/_slider.scss */
-.b-prodimages-icons-item {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-  display: block;
-  border: 1px solid #866848;
-  margin-bottom: 6px;
-  padding: 2px 0;
+.w-b-prodimages-main {
+  width: 100%;
+  height: 224px;
+}
+
+/* line 56, ../sass/_slider.scss */
+.b-prodimages-main {
+  text-align: center;
 }
 
 /* line 59, ../sass/_slider.scss */
+.b-prodimages-main-img {
+  border: 1px solid #866848;
+}
+
+/* line 62, ../sass/_slider.scss */
+.b-prodimages-icons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 35px;
+  list-style: none;
+  text-align: center;
+}
+
+/* line 71, ../sass/_slider.scss */
+.b-prodimages-icons-item {
+  border: 1px solid #866848;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+/* line 76, ../sass/_slider.scss */
+.b-prodimages-icons-item-h {
+  width: 50px;
+  height: 33px;
+}
+
+/* line 80, ../sass/_slider.scss */
 .b-prodimages-icons-item-anchor {
   display: block;
 }
 
-/* line 62, ../sass/_slider.scss */
+/* line 83, ../sass/_slider.scss */
 .b-prodimages-icons-item-img {
   margin: 0 auto;
   display: block;
 }
 
-/* line 67, ../sass/_slider.scss */
+/* line 89, ../sass/_slider.scss */
 .b-product-right {
-  position: relative;
-  margin-left: 275px;
-  height: 100%;
+  position: absolute;
+  margin-left: 363px;
+  top: 116px;
+  bottom: 0;
 }
 
-/* line 73, ../sass/_slider.scss */
+/* line 96, ../sass/_slider.scss */
 .b-product-title {
   color: #633100;
   font-weight: bold;
   font-style: italic;
-  margin-bottom: 12px;
   font-family: 'Times New Roman', serif;
+  text-align: center;
+  height: 116px;
 }
 
-/* line 80, ../sass/_slider.scss */
+/* line 104, ../sass/_slider.scss */
 .b-product-title-primary {
   display: block;
   font-size: 45px;
 }
 
-/* line 84, ../sass/_slider.scss */
+/* line 108, ../sass/_slider.scss */
 .b-product-title-secondary {
   display: block;
   font-size: 30px;
 }
 
-/* line 90, ../sass/_slider.scss */
+/* line 114, ../sass/_slider.scss */
 .b-product-description {
-  line-height: 27px;
+  line-height: 26px;
   font-size: 22px;
   color: #3a190a;
 }
 
-/* line 96, ../sass/_slider.scss */
+/* line 120, ../sass/_slider.scss */
 .b-product-label {
   background-position: 0 -254px;
   height: 144px;
@@ -568,13 +601,13 @@ body {
   background-image: url('../img/sprites-s3f3e67e010.png');
   text-shadow: 0px 1px 2px #9d4e00;
   position: absolute;
-  bottom: 23px;
   left: -9px;
+  bottom: 4px;
   color: #602f00;
   font-family: 'Tahoma', 'Trebuchet MS', serif;
 }
 
-/* line 105, ../sass/_slider.scss */
+/* line 130, ../sass/_slider.scss */
 .b-product-label-weight {
   position: absolute;
   bottom: 25px;
@@ -583,7 +616,7 @@ body {
   font-size: 27px;
 }
 
-/* line 112, ../sass/_slider.scss */
+/* line 137, ../sass/_slider.scss */
 .b-product-label-price {
   position: absolute;
   top: 30px;
@@ -591,7 +624,7 @@ body {
   font-size: 60px;
 }
 
-/* line 120, ../sass/_slider.scss */
+/* line 145, ../sass/_slider.scss */
 .b-products-delimiter {
   background-position: 0 -86px;
   height: 24px;
@@ -600,41 +633,42 @@ body {
   margin: 0 auto;
 }
 
-/* line 125, ../sass/_slider.scss */
+/* line 150, ../sass/_slider.scss */
 .b-prodicons {
   padding: 19px 0;
   text-align: center;
   list-style: none;
 }
 
-/* line 134, ../sass/_slider.scss */
+/* line 159, ../sass/_slider.scss */
 .b-prodicons-item {
   display: inline-block;
   position: relative;
   margin: 0 20px;
-  width: 65px;
-  height: 100px;
+  width: 105px;
+  height: 68px;
   padding: 5px 5px 5px 5px;
   background: none;
 }
-/* line 140, ../sass/_slider.scss */
+/* line 165, ../sass/_slider.scss */
 .b-prodicons-item.state_selected {
   background: #a37d64;
 }
 
-/* line 144, ../sass/_slider.scss */
+/* line 169, ../sass/_slider.scss */
 .b-prodicons-item-h {
   -webkit-box-shadow: gray 0 0 10px;
   -moz-box-shadow: gray 0 0 10px;
   box-shadow: gray 0 0 10px;
-  width: 65px;
-  height: 100px;
+  width: 105px;
+  height: 68px;
   background-color: white;
 }
 
-/* line 150, ../sass/_slider.scss */
-.b-prodicons-item-h-h {
-  text-align: center;
+/* line 175, ../sass/_slider.scss */
+.b-prodicons-item-img {
+  margin: 0 auto;
+  display: block;
 }
 
 /* line 7, ../sass/_footer.scss */

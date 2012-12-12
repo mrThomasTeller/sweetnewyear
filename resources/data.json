@@ -13,21 +13,22 @@
 			"price": 499,
 			"package": "50 г",
 			"images": {
-				"main": "ivan-tea/big.png",
-				"preview": "ivan-tea/preview.png",
+				"main": "ivan-tea/big.jpg",
+				"full": "ivan-tea/big.jpg",
+				"preview": "ivan-tea/preview.jpg",
 				"add": [
 					{
-						"icon": "ivan-tea/mini.png",
-						"full": "ivan-tea/big.png",
+						"icon": "ivan-tea/mini.jpg",
+						"full": "ivan-tea/big.jpg",
 						"title": "Вкусный иван чай!!!"
 					},
 					{
-						"icon": "ivan-tea/mini.png",
-						"full": "ivan-tea/big.png"
+						"icon": "ivan-tea/mini.jpg",
+						"full": "ivan-tea/big.jpg"
 					},
 					{
-						"icon": "ivan-tea/mini.png",
-						"full": "ivan-tea/big.png"
+						"icon": "ivan-tea/mini.jpg",
+						"full": "ivan-tea/big.jpg"
 					}
 				]
 			}
@@ -41,20 +42,21 @@
 			"price": 499,
 			"package": "50 г",
 			"images": {
-				"main": "ivan-tea/big.png",
-				"preview": "ivan-tea/preview.png",
+				"main": "ivan-tea/big.jpg",
+				"full": "ivan-tea/big.jpg",
+				"preview": "ivan-tea/preview.jpg",
 				"add": [
 					{
-						"icon": "ivan-tea/mini.png",
-						"full": "ivan-tea/big.png"
+						"icon": "ivan-tea/mini.jpg",
+						"full": "ivan-tea/big.jpg"
 					},
 					{
-						"icon": "ivan-tea/mini.png",
-						"full": "ivan-tea/big.png"
+						"icon": "ivan-tea/mini.jpg",
+						"full": "ivan-tea/big.jpg"
 					},
 					{
-						"icon": "ivan-tea/mini.png",
-						"full": "ivan-tea/big.png"
+						"icon": "ivan-tea/mini.jpg",
+						"full": "ivan-tea/big.jpg"
 					}
 				]
 			}
@@ -68,20 +70,21 @@
 			"price": 499,
 			"package": "50 г",
 			"images": {
-				"main": "ivan-tea/big.png",
-				"preview": "ivan-tea/preview.png",
+				"main": "ivan-tea/big.jpg",
+				"full": "ivan-tea/big.jpg",
+				"preview": "ivan-tea/preview.jpg",
 				"add": [
 					{
-						"icon": "ivan-tea/mini.png",
-						"full": "ivan-tea/big.png"
+						"icon": "ivan-tea/mini.jpg",
+						"full": "ivan-tea/big.jpg"
 					},
 					{
-						"icon": "ivan-tea/mini.png",
-						"full": "ivan-tea/big.png"
+						"icon": "ivan-tea/mini.jpg",
+						"full": "ivan-tea/big.jpg"
 					},
 					{
-						"icon": "ivan-tea/mini.png",
-						"full": "ivan-tea/big.png"
+						"icon": "ivan-tea/mini.jpg",
+						"full": "ivan-tea/big.jpg"
 					}
 				]
 			}
@@ -95,20 +98,21 @@
 			"price": 499,
 			"package": "50 г",
 			"images": {
-				"main": "ivan-tea/big.png",
-				"preview": "ivan-tea/preview.png",
+				"main": "ivan-tea/big.jpg",
+				"full": "ivan-tea/big.jpg",
+				"preview": "ivan-tea/preview.jpg",
 				"add": [
 					{
-						"icon": "ivan-tea/mini.png",
-						"full": "ivan-tea/big.png"
+						"icon": "ivan-tea/mini.jpg",
+						"full": "ivan-tea/big.jpg"
 					},
 					{
-						"icon": "ivan-tea/mini.png",
-						"full": "ivan-tea/big.png"
+						"icon": "ivan-tea/mini.jpg",
+						"full": "ivan-tea/big.jpg"
 					},
 					{
-						"icon": "ivan-tea/mini.png",
-						"full": "ivan-tea/big.png"
+						"icon": "ivan-tea/mini.jpg",
+						"full": "ivan-tea/big.jpg"
 					}
 				]
 			}

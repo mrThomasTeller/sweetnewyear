@@ -1,6 +1,6 @@
 function main(slider)
 {
-	$.get("resources/data.json", function (result)
+	$.ajax({url: "resources/data.json", cache: false, success: function (result)
 	{
 		result = typeof result === "string" ? JSON.parse(result) : result;
 
@@ -67,7 +67,7 @@ function main(slider)
 				{
 					slider.stop();
 				}
-				
+
 				if (page === "callback")
 				{
 					self.mailSent(false);
@@ -82,7 +82,7 @@ function main(slider)
 			slider.init(slider);
 			$(".l-loader").fadeOut("fast");
 		}, 0);
-	});
+	}});
 }
 
 require.config({
@@ -104,7 +104,7 @@ require(["js/vendor/json2.js", "js/vendor/es5-shim.js", "js/vendor/html5shiv.js"
 	require(["js/vendor/jquery-1.8.3.js", "js/vendor/knockout-2.2.0.js"], function (js, ko)
 	{
 		window.ko = ko;
-		require(["js/slider.js", "js/callbackForm.js", "js/vendor/fancybox/jquery.fancybox.js", 
+		require(["js/slider.js", "js/callbackForm.js", "js/vendor/fancybox/jquery.fancybox.js",
 			"js/libs/knockout.vhtml.js", "js/koextends.js"],
 			function (slider)
 			{

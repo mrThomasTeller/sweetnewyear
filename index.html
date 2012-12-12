@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Сладкий новый год</title>
-	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 	<link href="./css/screen.css" media="screen, projection" rel="stylesheet"/>
 	<link href="./css/print.css" media="print" rel="stylesheet"/>
 	<link href="./js/vendor/fancybox/jquery.fancybox.css" rel="stylesheet"/>
@@ -15,6 +16,7 @@
 <header class="l-header">
 	<div class="b-header">
 		<a class="b-header-bear" href="http://estmedok.ru" target="_blank"></a>
+
 		<div class="b-header-title"></div>
 		<div class="b-header-contacts">
 			<span class="b-header-contacts-call-text">Звоните нам!</span><br/>
@@ -45,30 +47,46 @@
 				<div class="w-b-products-slider-items">
 					<div class="b-products-slider-items" data-bind="foreach: products">
 						<article class="b-products-slider-item b-product">
-							<div class="b-prodimages">
-								<figure class="b-prodimages-main">
-									<img class="b-prodimages-main-img"
-										data-bind="attr: {src: $root.getProductImage(images.main)}"/>
-								</figure>
-								<ul class="b-prodimages-icons" data-bind="foreach: images.add, fancyboxGroup: true">
+							<h1 class="b-product-title">
+								<span class="b-product-title-primary" data-bind="text: title.primary"></span>
+								<!-- ko if: !!title.secondary -->
+								<span class="b-product-title-secondary" data-bind="text: title.secondary"></span>
+								<!-- /ko -->
+							</h1>
+
+							<div class="b-prodimages" data-bind="fancyboxGroup: true">
+								<table class="w-b-prodimages-main">
+									<tbody>
+									<tr>
+										<td>
+											<figure class="b-prodimages-main">
+												<a class="b-prodimages-main-anchor" data-bind="attr: {href: $root.getProductImage(images.full), title: title.primary}">
+													<img class="b-prodimages-main-img" data-bind="attr: {src: $root.getProductImage(images.main)}"/>
+												</a>
+											</figure>
+										</td>
+									</tr>
+									</tbody>
+								</table>
+								<ul class="b-prodimages-icons" data-bind="foreach: images.add">
 									<li class="b-prodimages-icons-item">
 										<a class="b-prodimages-icons-item-anchor"
 											data-bind="attr: {href: $root.getProductImage(full), title: $data.title}">
-											<img class="b-prodimages-icons-item-img"
-												data-bind="attr: {src: $root.getProductImage(icon)}"/>
+											<table class="b-prodimages-icons-item-h">
+												<tbody>
+												<tr>
+													<td class="b-prodimages-icons-item-h-h">
+														<img class="b-prodimages-icons-item-img" data-bind="attr: {src: $root.getProductImage(icon)}"/>
+													</td>
+												</tr>
+												</tbody>
+											</table>
 										</a>
 									</li>
 								</ul>
 							</div>
 
 							<div class="b-product-right">
-								<h1 class="b-product-title">
-									<span class="b-product-title-primary" data-bind="text: title.primary"></span>
-									<!-- ko if: !!title.secondary -->
-									<span class="b-product-title-secondary" data-bind="text: title.secondary"></span>
-									<!-- /ko -->
-								</h1>
-
 								<section class="b-product-description" data-bind="html: description"></section>
 
 								<div class="b-product-label">
@@ -113,10 +131,10 @@
 			</script>
 		</div>
 	</div>
-	
+
 	<!-- ko foreach: ko.iterateObject(pages) -->
 	<div class="b-splash-page" data-bind="visible: $root.page() === key, with: value">
-		<div class="b-splash-page-overlay"></div>
+		<div class="b-splash-page-overlay" data-bind="click: $root.goToMainPage"></div>
 		<div class="b-splash-page-container b-winpaper">
 			<a href="javascript:void(0)" class="b-winpaper-close" data-bind="click: $root.goToMainPage">✖</a>
 			<article class="b-winpaper-article">
@@ -128,9 +146,9 @@
 		</div>
 	</div>
 	<!-- /ko -->
-	
+
 	<div class="b-splash-page" data-bind="visible: page() === 'callback'">
-		<div class="b-splash-page-overlay"></div>
+		<div class="b-splash-page-overlay" data-bind="click: $root.goToMainPage"></div>
 		<div class="b-splash-page-container b-winsmart mod_callback">
 			<a href="javascript:void(0)" class="b-winsmart-close" data-bind="click: goToMainPage"></a>
 
@@ -149,7 +167,7 @@
 						<span class="b-cbform-input-label">Дополнительная информация:</span>
 						<textarea name="additional" class="b-cbform-input-field"></textarea>
 					</label>
-					<input class="b-cbform-input mod_submit" type="submit" value="" 
+					<input class="b-cbform-input mod_submit" type="submit" value=""
 						data-bind="style: {visibility: mailWait() || mailSent() ? 'hidden' : 'visible'}">
 				</form>
 				<div class="b-cbform-success" data-bind="visible: mailSent()">
