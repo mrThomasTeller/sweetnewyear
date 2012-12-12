@@ -1,3 +1,2 @@
 <?php
-mail("artyom.bakharev@gmail.com", "Çàêàç", "Èìÿ: {$_POST['name']}\nÒåëåôîí: {$_POST['phone']}\nÄîïîëíèòåëüíî: {$_POST['additional']}\n");
-echo "Èìÿ: {$_POST['name']}\nÒåëåôîí: {$_POST['phone']}\nÄîïîëíèòåëüíî: {$_POST['additional']}\n";
+mail("artyom.bakharev@gmail.com", "Ð—Ð°ÐºÐ°Ð·", "Ð˜Ð¼Ñ: {$_POST['name']}\nÐ¢ÐµÐ»ÐµÑ„Ð¾Ð½: {$_POST['phone']}\nÐ”Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾: {$_POST['additional']}\n");
