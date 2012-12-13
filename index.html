@@ -10,10 +10,22 @@
 </head>
 <body>
 <div class="l-loader" style="background: white; position: fixed; width: 100%; height: 100%; z-index: 99999;">
-	<div style="background: url(img/ajax-loader.gif); position: absolute; left: 50%; top: 50%; 
-		margin-left: -16px; margin-top: -16px; width: 32px; height: 32px"></div>
+	<script>
+		document.write('<div style="background: url(img/ajax-loader.gif); position: absolute; left: 50%; top: 50%; ' +
+			'margin-left: -16px; margin-top: -16px; width: 32px; height: 32px"></div>');
+	</script>
+	<noscript>
+		<p style="margin: 10px 0 0 10px">
+			Пожалуйста, включите поддержку JavaScript в своём браузере, чтобы просмотреть этот сайт.<br/>
+			Если у вас нет такой возможности, посетите сайт <a href="http://estmedok.ru">http://estmedok.ru</a>.
+		</p>
+		<p style="margin: 10px 0 0 10px">
+			Наш телефон: 8-923-422-32-42<br/>
+			E-mail: estmedok@gmail.com
+		</p>
+	</noscript>
 </div>
-<header class="l-header">
+<div class="l-header">
 	<div class="b-header">
 		<a class="b-header-bear" href="http://estmedok.ru" target="_blank"></a>
 
@@ -24,7 +36,7 @@
 			<span class="b-header-contacts-or">или</span><br/>
 			<a href="javascript:void(0)" class="b-header-contacts-call-back" data-bind="firstNavigation: 'callback'">ЗАКАЖИТЕ ЗВОНОК</a>
 		</div>
-		<nav class="b-header-menu">
+		<div class="b-header-menu">
 			<a href="javascript:void(0)" class="b-header-menu-item state_selected state_odd nav_offer" data-bind="firstNavigation: 'offer'">
 				<span class="helper">Что мы можем предложить?</span>
 			</a>
@@ -34,9 +46,9 @@
 			<a href="javascript:void(0)" class="b-header-menu-item state_odd nav_order" data-bind="firstNavigation: 'order'">
 				<span class="helper">Сделать заказ</span>
 			</a>
-		</nav>
+		</div>
 	</div>
-</header>
+</div>
 <div class="l-page-w">
 	<div class="l-page">
 		<div class="b-products">
@@ -46,7 +58,7 @@
 
 				<div class="w-b-products-slider-items">
 					<div class="b-products-slider-items" data-bind="foreach: products">
-						<article class="b-products-slider-item b-product">
+						<div class="b-products-slider-item b-product">
 							<h1 class="b-product-title">
 								<span class="b-product-title-primary" data-bind="text: title.primary"></span>
 								<!-- ko if: !!title.secondary -->
@@ -96,7 +108,7 @@
 									<!-- /ko -->
 								</div>
 							</div>
-						</article>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -137,12 +149,12 @@
 		<div class="b-splash-page-overlay" data-bind="click: $root.goToMainPage"></div>
 		<div class="b-splash-page-container b-winpaper">
 			<a href="javascript:void(0)" class="b-winpaper-close" data-bind="click: $root.goToMainPage">✖</a>
-			<article class="b-winpaper-article">
+			<div class="b-winpaper-article">
 				<h1 class="b-winpaper-article-title" data-bind="text: title"></h1>
 
 				<!-- ko vhtml: content -->
 				<!-- /ko -->
-			</article>
+			</div>
 		</div>
 	</div>
 	<!-- /ko -->
@@ -179,21 +191,22 @@
 
 </div>
 
-<footer class="l-footer">
+<div class="l-footer">
 	<div class="b-footer">
 		<div class="b-footer-honey"></div>
 		<div class="b-footer-text">Есть медок — полезные подарки к любому празднику!</div>
-		<nav class="b-footer-nav">
+		<div class="b-footer-nav">
 			<a href="javascript:void(0)" class="b-footer-nav-item nav_offer" data-bind="firstNavigation: 'offer'">Что мы можем предложить?</a>
 			<a href="javascript:void(0)" class="b-footer-nav-item nav_principe" data-bind="firstNavigation: 'principe'">Принцип работы</a>
 			<a href="javascript:void(0)" class="b-footer-nav-item nav_order" data-bind="firstNavigation: 'order'">Сделать заказ</a>
-		</nav>
-		<a class="b-footer-email" href="mailto:estmedok@gmail.com"><span class="b-footer-email-icon"></span> <span
-			class="helper">estmedok@gmail.com</span></a>
+		</div>
+		<a class="b-footer-email" href="mailto:estmedok@gmail.com">
+			<span class="b-footer-email-icon"></span> <span class="helper">estmedok@gmail.com</span>
+		</a>
 
 		<div class="b-footer-copyright">2012 © Все права защищены</div>
 	</div>
-</footer>
+</div>
 <script src="js/vendor/require.js"></script>
 <script src="main.js"></script>
 </body>

@@ -39,13 +39,13 @@ $header-height: 256px;
 }
 $b-header-contacts-text-margin: 6px;
 .b-header-contacts-call-text, .b-header-contacts-or {
-	display: inline-block;
+	@include inline-block;
 	font-size: 12px;
 	color: #c96707;
 	margin-bottom: $b-header-contacts-text-margin;
 }
 .b-header-contacts-number {
-	display: inline-block;
+	@include inline-block;
 	font-size: 24px;
 	font-weight: bold;
 	color: $color-dark-brown;
@@ -53,7 +53,7 @@ $b-header-contacts-text-margin: 6px;
 }
 .b-header-contacts-call-back {
 	@include block-anchor($color: dark-brown);
-	display: inline-block;
+	@include inline-block;
 	font-size: 15px;
 	font-weight: bold;
 	margin-bottom: $b-header-contacts-text-margin;

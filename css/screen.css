@@ -134,7 +134,12 @@ body {
 
 /* line 41, ../sass/_header.scss */
 .b-header-contacts-call-text, .b-header-contacts-or {
+  display: -moz-inline-stack;
   display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   font-size: 12px;
   color: #c96707;
   margin-bottom: 6px;
@@ -142,7 +147,12 @@ body {
 
 /* line 47, ../sass/_header.scss */
 .b-header-contacts-number {
+  display: -moz-inline-stack;
   display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   font-size: 24px;
   font-weight: bold;
   color: #562409;
@@ -154,7 +164,12 @@ body {
   text-decoration: none;
   color: #562409;
   border-bottom: 1px dashed #562409;
+  display: -moz-inline-stack;
   display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   font-size: 15px;
   font-weight: bold;
   margin-bottom: 6px;
@@ -225,23 +240,25 @@ body {
 /* line 12, ../sass/_main-page.scss */
 .b-vkgroup {
   height: 220px;
+  margin: 25px 0 0;
 }
 
-/* line 15, ../sass/_main-page.scss */
+/* line 16, ../sass/_main-page.scss */
 #vk_groups {
-  margin: 25px auto 0;
+  margin: 0 auto;
 }
 
-/* line 20, ../sass/_main-page.scss */
+/* line 21, ../sass/_main-page.scss */
 .b-splash-page {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 10;
 }
 
-/* line 23, ../sass/_main-page.scss */
+/* line 25, ../sass/_main-page.scss */
 .b-splash-page-overlay {
   position: absolute;
   top: 0;
@@ -253,13 +270,13 @@ body {
   background-color: #000000;
 }
 
-/* line 29, ../sass/_main-page.scss */
+/* line 31, ../sass/_main-page.scss */
 .b-splash-page-container {
   position: relative;
   margin: 0 auto;
 }
 
-/* line 35, ../sass/_main-page.scss */
+/* line 37, ../sass/_main-page.scss */
 .b-winpaper {
   background-image: url("../img/paperbg.png");
   width: 891px;
@@ -268,7 +285,7 @@ body {
   top: 2px;
 }
 
-/* line 40, ../sass/_main-page.scss */
+/* line 42, ../sass/_main-page.scss */
 .b-winpaper-close {
   position: absolute;
   top: 23px;
@@ -277,23 +294,23 @@ body {
   text-decoration: none;
   color: #623100;
 }
-/* line 48, ../sass/_main-page.scss */
+/* line 50, ../sass/_main-page.scss */
 .b-winpaper-close:hover, .b-winpaper-close:focus {
   color: #996c14;
 }
 
-/* line 52, ../sass/_main-page.scss */
+/* line 54, ../sass/_main-page.scss */
 .b-winpaper-article {
   padding: 30px 63px 0;
   color: #3e0c0c;
   font-size: 18px;
 }
-/* line 56, ../sass/_main-page.scss */
+/* line 58, ../sass/_main-page.scss */
 .b-winpaper-article p {
   margin-bottom: 25px;
 }
 
-/* line 60, ../sass/_main-page.scss */
+/* line 62, ../sass/_main-page.scss */
 .b-winpaper-article-title {
   font-family: 'Lobster', cursive;
   font-size: 36px;
@@ -303,7 +320,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* line 70, ../sass/_main-page.scss */
+/* line 72, ../sass/_main-page.scss */
 .b-winsmart {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -315,12 +332,12 @@ body {
   top: 30px;
   background: url(../img/callback-bg.png);
 }
-/* line 77, ../sass/_main-page.scss */
+/* line 79, ../sass/_main-page.scss */
 .b-winsmart.mod_callback {
   width: 330px;
 }
 
-/* line 81, ../sass/_main-page.scss */
+/* line 83, ../sass/_main-page.scss */
 .b-winsmart-close {
   background-position: 0 0;
   height: 34px;
@@ -331,13 +348,13 @@ body {
   top: -17px;
 }
 
-/* line 87, ../sass/_main-page.scss */
+/* line 89, ../sass/_main-page.scss */
 .b-cbform {
   padding: 21px 38px 22px;
   color: #676766;
 }
 
-/* line 91, ../sass/_main-page.scss */
+/* line 93, ../sass/_main-page.scss */
 .b-cbform-success {
   position: absolute;
   top: 50%;
@@ -350,7 +367,7 @@ body {
   color: green;
 }
 
-/* line 102, ../sass/_main-page.scss */
+/* line 104, ../sass/_main-page.scss */
 .b-cbform-title {
   text-shadow: 0px 1px 2px white;
   font-size: 24px;
@@ -358,14 +375,14 @@ body {
   margin-bottom: 24px;
 }
 
-/* line 108, ../sass/_main-page.scss */
+/* line 110, ../sass/_main-page.scss */
 .b-cbform-input {
   position: relative;
   display: block;
   font-size: 20px;
   margin-bottom: 23px;
 }
-/* line 114, ../sass/_main-page.scss */
+/* line 116, ../sass/_main-page.scss */
 .b-cbform-input.mod_submit {
   background-position: -34px 0;
   height: 41px;
@@ -375,25 +392,25 @@ body {
   cursor: pointer;
   margin: 0 auto;
 }
-/* line 121, ../sass/_main-page.scss */
+/* line 123, ../sass/_main-page.scss */
 .b-cbform-input.mod_text {
   height: 52px;
 }
-/* line 124, ../sass/_main-page.scss */
+/* line 126, ../sass/_main-page.scss */
 .b-cbform-input.mod_text .b-cbform-input-field {
   padding-left: 10px;
   font-size: 25px;
 }
-/* line 129, ../sass/_main-page.scss */
+/* line 131, ../sass/_main-page.scss */
 .b-cbform-input.mod_textarea {
   height: 94px;
 }
-/* line 132, ../sass/_main-page.scss */
+/* line 134, ../sass/_main-page.scss */
 .b-cbform-input.mod_textarea .b-cbform-input-field {
   height: 72px;
   overflow: auto;
 }
-/* line 137, ../sass/_main-page.scss */
+/* line 139, ../sass/_main-page.scss */
 .b-cbform-input label.error {
   position: absolute;
   font-size: 12px;
@@ -402,7 +419,7 @@ body {
   right: 5px;
 }
 
-/* line 145, ../sass/_main-page.scss */
+/* line 147, ../sass/_main-page.scss */
 .b-cbform-input-field {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -420,24 +437,24 @@ body {
   box-shadow: inset #a8a8a8 1px 1px 3px;
   border: #dfdfdf 1px solid;
 }
-/* line 153, ../sass/_main-page.scss */
+/* line 155, ../sass/_main-page.scss */
 .b-cbform-input-field:focus {
   -webkit-box-shadow: inset #a8a8a8 1px 1px 3px, #fdff5c 0 0 10px;
   -moz-box-shadow: inset #a8a8a8 1px 1px 3px, #fdff5c 0 0 10px;
   box-shadow: inset #a8a8a8 1px 1px 3px, #fdff5c 0 0 10px;
   outline: none;
 }
-/* line 157, ../sass/_main-page.scss */
+/* line 159, ../sass/_main-page.scss */
 .b-cbform-input-field.error {
   background-color: #ff9890;
 }
 
-/* line 161, ../sass/_main-page.scss */
+/* line 163, ../sass/_main-page.scss */
 .b-cbform-input-label {
   display: block;
   font-size: 12px;
 }
-/* line 165, ../sass/_main-page.scss */
+/* line 167, ../sass/_main-page.scss */
 .b-cbform-input-label .required {
   color: red;
 }
@@ -461,9 +478,10 @@ body {
   height: 53px;
   width: 53px;
   background-image: url('../img/sprites-s3f3e67e010.png');
+  left: 0;
 }
 
-/* line 16, ../sass/_slider.scss */
+/* line 17, ../sass/_slider.scss */
 .b-products-slider-button-next {
   background-position: -245px 0;
   height: 53px;
@@ -472,21 +490,22 @@ body {
   right: 0;
 }
 
-/* line 21, ../sass/_slider.scss */
+/* line 22, ../sass/_slider.scss */
 .w-b-products-slider-items {
+  position: relative;
   overflow: hidden;
   margin: 0 67px;
   height: 100%;
 }
 
-/* line 26, ../sass/_slider.scss */
+/* line 28, ../sass/_slider.scss */
 .b-products-slider-items {
   position: relative;
   height: 100%;
   width: 99999px;
 }
 
-/* line 33, ../sass/_slider.scss */
+/* line 37, ../sass/_slider.scss */
 .b-product {
   width: 690px;
   padding-left: 35px;
@@ -497,7 +516,7 @@ body {
   position: relative;
 }
 
-/* line 46, ../sass/_slider.scss */
+/* line 50, ../sass/_slider.scss */
 .b-prodimages {
   position: relative;
   float: left;
@@ -505,23 +524,23 @@ body {
   height: 265px;
 }
 
-/* line 52, ../sass/_slider.scss */
+/* line 56, ../sass/_slider.scss */
 .w-b-prodimages-main {
   width: 100%;
   height: 224px;
 }
 
-/* line 56, ../sass/_slider.scss */
+/* line 60, ../sass/_slider.scss */
 .b-prodimages-main {
   text-align: center;
 }
 
-/* line 59, ../sass/_slider.scss */
+/* line 63, ../sass/_slider.scss */
 .b-prodimages-main-img {
   border: 1px solid #866848;
 }
 
-/* line 62, ../sass/_slider.scss */
+/* line 66, ../sass/_slider.scss */
 .b-prodimages-icons {
   position: absolute;
   left: 0;
@@ -532,39 +551,46 @@ body {
   text-align: center;
 }
 
-/* line 71, ../sass/_slider.scss */
+/* line 75, ../sass/_slider.scss */
 .b-prodimages-icons-item {
   border: 1px solid #866848;
+  display: -moz-inline-stack;
   display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   margin: 0 5px;
 }
 
-/* line 76, ../sass/_slider.scss */
+/* line 80, ../sass/_slider.scss */
 .b-prodimages-icons-item-h {
   width: 50px;
   height: 33px;
 }
 
-/* line 80, ../sass/_slider.scss */
+/* line 84, ../sass/_slider.scss */
 .b-prodimages-icons-item-anchor {
   display: block;
+  cursor: pointer;
 }
 
-/* line 83, ../sass/_slider.scss */
+/* line 88, ../sass/_slider.scss */
 .b-prodimages-icons-item-img {
   margin: 0 auto;
   display: block;
 }
 
-/* line 89, ../sass/_slider.scss */
+/* line 94, ../sass/_slider.scss */
 .b-product-right {
   position: absolute;
-  margin-left: 363px;
+  left: 398px;
+  right: 30px;
   top: 116px;
   bottom: 0;
 }
 
-/* line 96, ../sass/_slider.scss */
+/* line 102, ../sass/_slider.scss */
 .b-product-title {
   color: #633100;
   font-weight: bold;
@@ -574,26 +600,26 @@ body {
   height: 116px;
 }
 
-/* line 104, ../sass/_slider.scss */
+/* line 110, ../sass/_slider.scss */
 .b-product-title-primary {
   display: block;
   font-size: 45px;
 }
 
-/* line 108, ../sass/_slider.scss */
+/* line 114, ../sass/_slider.scss */
 .b-product-title-secondary {
   display: block;
   font-size: 30px;
 }
 
-/* line 114, ../sass/_slider.scss */
+/* line 120, ../sass/_slider.scss */
 .b-product-description {
   line-height: 26px;
   font-size: 22px;
   color: #3a190a;
 }
 
-/* line 120, ../sass/_slider.scss */
+/* line 126, ../sass/_slider.scss */
 .b-product-label {
   background-position: 0 -254px;
   height: 144px;
@@ -607,7 +633,7 @@ body {
   font-family: 'Tahoma', 'Trebuchet MS', serif;
 }
 
-/* line 130, ../sass/_slider.scss */
+/* line 136, ../sass/_slider.scss */
 .b-product-label-weight {
   position: absolute;
   bottom: 25px;
@@ -616,7 +642,7 @@ body {
   font-size: 27px;
 }
 
-/* line 137, ../sass/_slider.scss */
+/* line 143, ../sass/_slider.scss */
 .b-product-label-price {
   position: absolute;
   top: 30px;
@@ -624,7 +650,7 @@ body {
   font-size: 60px;
 }
 
-/* line 145, ../sass/_slider.scss */
+/* line 151, ../sass/_slider.scss */
 .b-products-delimiter {
   background-position: 0 -86px;
   height: 24px;
@@ -633,16 +659,21 @@ body {
   margin: 0 auto;
 }
 
-/* line 150, ../sass/_slider.scss */
+/* line 156, ../sass/_slider.scss */
 .b-prodicons {
   padding: 19px 0;
   text-align: center;
   list-style: none;
 }
 
-/* line 159, ../sass/_slider.scss */
+/* line 165, ../sass/_slider.scss */
 .b-prodicons-item {
+  display: -moz-inline-stack;
   display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   position: relative;
   margin: 0 20px;
   width: 105px;
@@ -650,12 +681,17 @@ body {
   padding: 5px 5px 5px 5px;
   background: none;
 }
-/* line 165, ../sass/_slider.scss */
+/* line 171, ../sass/_slider.scss */
 .b-prodicons-item.state_selected {
   background: #a37d64;
 }
 
-/* line 169, ../sass/_slider.scss */
+/* line 175, ../sass/_slider.scss */
+.b-prodicons-item-anchor {
+  cursor: pointer;
+}
+
+/* line 178, ../sass/_slider.scss */
 .b-prodicons-item-h {
   -webkit-box-shadow: gray 0 0 10px;
   -moz-box-shadow: gray 0 0 10px;
@@ -665,7 +701,7 @@ body {
   background-color: white;
 }
 
-/* line 175, ../sass/_slider.scss */
+/* line 184, ../sass/_slider.scss */
 .b-prodicons-item-img {
   margin: 0 auto;
   display: block;
@@ -673,13 +709,15 @@ body {
 
 /* line 7, ../sass/_footer.scss */
 .l-footer {
+  position: relative;
+  z-index: 20;
   background-position: 0 -256px;
   background-image: url('../img/vsprites73-s22177a199a.png');
   background-repeat: repeat-x;
   height: 203px;
 }
 
-/* line 12, ../sass/_footer.scss */
+/* line 14, ../sass/_footer.scss */
 .b-footer {
   width: 817px;
   height: 163px;
@@ -690,7 +728,7 @@ body {
   color: #ffc49c;
 }
 
-/* line 20, ../sass/_footer.scss */
+/* line 22, ../sass/_footer.scss */
 .b-footer-honey {
   background-position: -714px -110px;
   height: 144px;
@@ -701,18 +739,18 @@ body {
   top: 29px;
 }
 
-/* line 27, ../sass/_footer.scss */
+/* line 29, ../sass/_footer.scss */
 .b-footer-text {
   font-size: 13px;
   margin-bottom: 10px;
 }
 
-/* line 32, ../sass/_footer.scss */
+/* line 34, ../sass/_footer.scss */
 .b-footer-nav {
   margin-bottom: 32px;
 }
 
-/* line 36, ../sass/_footer.scss */
+/* line 38, ../sass/_footer.scss */
 .b-footer-nav-item {
   text-decoration: none;
   color: #ffc49c;
@@ -726,32 +764,42 @@ body {
   border-bottom-color: #996c14;
 }
 
-/* line 42, ../sass/_footer.scss */
+/* line 44, ../sass/_footer.scss */
 .b-footer-email {
+  display: -moz-inline-stack;
   display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   font-size: 14px;
   color: #ffc49c;
   text-decoration: none;
   line-height: 15px;
   margin-bottom: 13px;
 }
-/* line 50, ../sass/_footer.scss */
+/* line 52, ../sass/_footer.scss */
 .b-footer-email:hover .helper, .b-footer-email:focus .helper {
   text-decoration: underline;
 }
 
-/* line 54, ../sass/_footer.scss */
+/* line 56, ../sass/_footer.scss */
 .b-footer-email-icon {
   background-position: -693px -110px;
   height: 15px;
   width: 21px;
   background-image: url('../img/sprites-s3f3e67e010.png');
+  display: -moz-inline-stack;
   display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   position: relative;
   top: 3px;
 }
 
-/* line 61, ../sass/_footer.scss */
+/* line 63, ../sass/_footer.scss */
 .b-footer-copyright {
   font-size: 13px;
 }

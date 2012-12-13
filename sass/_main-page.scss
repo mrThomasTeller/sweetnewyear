@@ -11,14 +11,16 @@
 
 .b-vkgroup {
 	height: 220px;
+	margin: 25px 0 0;
 }
 #vk_groups {
-	margin: 25px auto 0;
+	@include margin-center;
 }
 
 //PAGE
 .b-splash-page {
 	@include stretch;
+	z-index: 10;
 }
 .b-splash-page-overlay {
 	@include stretch;

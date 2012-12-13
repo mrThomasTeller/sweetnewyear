@@ -99,7 +99,7 @@ require.config({
 	}
 });
 
-require(["js/vendor/json2.js", "js/vendor/es5-shim.js", "js/vendor/html5shiv.js"], function ()
+require(["js/vendor/json2.js", "js/vendor/es5-shim.js"], function ()
 {
 	require(["js/vendor/jquery-1.8.3.js", "js/vendor/knockout-2.2.0.js"], function (js, ko)
 	{

@@ -5,6 +5,8 @@ $footer-height: 203px;
 $small-footer-text: 13px;
 
 .l-footer {
+	position: relative;
+	z-index: 20;
 	@include vbg-sprite($vsprites73, "footerbg");
 	height: $footer-height;
 }
@@ -40,7 +42,7 @@ $small-footer-text: 13px;
 }
 
 .b-footer-email {
-	display: inline-block;
+	@include inline-block;
 	font-size: $big-footer-text;
 	color: $color-light-pink;
 	text-decoration: none;
@@ -53,7 +55,7 @@ $small-footer-text: 13px;
 }
 .b-footer-email-icon {
 	@include rec-sprite($sprites, "mail-icon");
-	display: inline-block;
+	@include inline-block;
 	position: relative;
 	top: 3px;
 }
