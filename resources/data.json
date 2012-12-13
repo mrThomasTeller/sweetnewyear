@@ -2,33 +2,35 @@
 	"products": [
 		{
 			"title": {
-				"primary": "Иван-Чай",
-				"secondary": "чёрный гранулированный"
+				"primary": "Мёд",
+				"secondary": "Гречиха. Липа. Цветочный."
 			},
 			"description": [
 				"Мы предоставляем продукт в его естественном виде. Задача поставленная перед нами, это стабильно снабжать ",
 				"жителей города Мёдом, тем самым который лечит.<br/>",
 				"С уважением, Егор и команда."
 			],
-			"price": 499,
-			"package": "50 г",
+			"price": 250,
+			"package": "0,5 кг",
 			"images": {
-				"main": "ivan-tea/big.jpg",
-				"full": "ivan-tea/big.jpg",
-				"preview": "ivan-tea/preview.jpg",
+				"main": "honey/honey.jpg",
+				"full": "honey/honey_full.jpg",
+				"preview": "honey/honey_preview.jpg",
 				"add": [
 					{
-						"icon": "ivan-tea/mini.jpg",
-						"full": "ivan-tea/big.jpg",
-						"title": "Вкусный иван чай!!!"
+						"icon": "honey/honey_icon1.jpg",
+						"full": "honey/honey_icon1_full.jpg",
+						"title": "Вкусный мёд раз!"
 					},
 					{
-						"icon": "ivan-tea/mini.jpg",
-						"full": "ivan-tea/big.jpg"
+						"icon": "honey/honey_icon2.jpg",
+						"full": "honey/honey_icon2_full.jpg",
+						"title": "Вкусный мёд два!!"
 					},
 					{
-						"icon": "ivan-tea/mini.jpg",
-						"full": "ivan-tea/big.jpg"
+						"icon": "honey/honey_icon3.jpg",
+						"full": "honey/honey_icon3_full.jpg",
+						"title": "Вкусный мёд три!!!"
 					}
 				]
 			}
@@ -39,80 +41,43 @@
 				"secondary": "чёрный гранулированный"
 			},
 			"description": "Мы предоставляем продукт в его естественном виде. Задача поставленная перед нами, это стабильно снабжать жителей города Мёдом, тем самым который лечит.<br/>С уважением, Егор и команда.",
-			"price": 499,
-			"package": "50 г",
+			"price": 200,
+			"package": "100 г",
 			"images": {
-				"main": "ivan-tea/big.jpg",
-				"full": "ivan-tea/big.jpg",
-				"preview": "ivan-tea/preview.jpg",
+				"main": "ivan-tea/tea.jpg",
+				"full": "ivan-tea/tea_full.jpg",
+				"preview": "ivan-tea/tea_preview.jpg",
 				"add": [
 					{
-						"icon": "ivan-tea/mini.jpg",
-						"full": "ivan-tea/big.jpg"
+						"icon": "ivan-tea/tea_icon1.jpg",
+						"full": "ivan-tea/tea_icon1_full.jpg",
+                        "title": "Сочный чай раз!"
 					},
 					{
-						"icon": "ivan-tea/mini.jpg",
-						"full": "ivan-tea/big.jpg"
-					},
-					{
-						"icon": "ivan-tea/mini.jpg",
-						"full": "ivan-tea/big.jpg"
+						"icon": "ivan-tea/tea_icon2.jpg",
+						"full": "ivan-tea/tea_icon2_full.jpg",
+                        "title": "Сочный чай два!!"
 					}
 				]
 			}
 		},
 		{
 			"title": {
-				"primary": "Иван-Чай",
-				"secondary": "чёрный гранулированный"
+				"primary": "Подарки к 2013-му (последнему)",
+				"secondary": "Очаровательный набор"
 			},
 			"description": "Мы предоставляем продукт в его естественном виде. Задача поставленная перед нами, это стабильно снабжать жителей города Мёдом, тем самым который лечит.<br/>С уважением, Егор и команда.",
-			"price": 499,
-			"package": "50 г",
+			"price": 300,
+			"package": "0,5 кг",
 			"images": {
-				"main": "ivan-tea/big.jpg",
-				"full": "ivan-tea/big.jpg",
-				"preview": "ivan-tea/preview.jpg",
+				"main": "gifts/gifts.jpg",
+				"full": "gifts/gifts_full.jpg",
+				"preview": "gifts/gifts_preview.jpg",
 				"add": [
 					{
-						"icon": "ivan-tea/mini.jpg",
-						"full": "ivan-tea/big.jpg"
-					},
-					{
-						"icon": "ivan-tea/mini.jpg",
-						"full": "ivan-tea/big.jpg"
-					},
-					{
-						"icon": "ivan-tea/mini.jpg",
-						"full": "ivan-tea/big.jpg"
-					}
-				]
-			}
-		},
-		{
-			"title": {
-				"primary": "Иван-Чай",
-				"secondary": "чёрный гранулированный"
-			},
-			"description": "Мы предоставляем продукт в его естественном виде. Задача поставленная перед нами, это стабильно снабжать жителей города Мёдом, тем самым который лечит.<br/>С уважением, Егор и команда.",
-			"price": 499,
-			"package": "50 г",
-			"images": {
-				"main": "ivan-tea/big.jpg",
-				"full": "ivan-tea/big.jpg",
-				"preview": "ivan-tea/preview.jpg",
-				"add": [
-					{
-						"icon": "ivan-tea/mini.jpg",
-						"full": "ivan-tea/big.jpg"
-					},
-					{
-						"icon": "ivan-tea/mini.jpg",
-						"full": "ivan-tea/big.jpg"
-					},
-					{
-						"icon": "ivan-tea/mini.jpg",
-						"full": "ivan-tea/big.jpg"
+						"icon": "gifts/gifts_icon1.jpg",
+						"full": "gifts/gifts_icon1_full.jpg",
+                        "title": "Пподаррочки!!"
 					}
 				]
 			}
@@ -131,6 +96,17 @@
 				"Мёд цветочный, зрелый, жидкий. Алтайский район, Алтая. Мёд липовый, сметанообразный. Хабаровский",
 				"край.",
 				"</p>",
+                "<ul>",
+                "<li>",
+                "- One",
+                "</li>",
+                "<li>",
+                "- Two",
+                "</li>",
+                "<li>",
+                "- Three",
+                "</li>",
+                "</ul>",
 				
 				"<p style='text-align: center'>",
 				"Стоимость гречишного и цветочного меда:<br/>",
