@@ -1,4 +1,4 @@
-define(["./slider.js", "config", "./callbackForm.js", "base", "jquery.fancybox"], function (slider, config)
+define(["./slider.js", "config", "./callbackForm.js", "base", "jquery.fancybox"], function (slider, config, CallbackForm)
 {
 	$.ajax({url: "resources/data.json", cache: false, success: function (result)
 	{
@@ -31,8 +31,7 @@ define(["./slider.js", "config", "./callbackForm.js", "base", "jquery.fancybox"]
 			this.pages = result.pages;
 			this.selectedProductIndex = ko.observable(0);
 			this.page = ko.observable("main"); //offer, principe, order, callback
-			this.mailSent = ko.observable(false);
-			this.mailWait = ko.observable(false);
+			this.callbackViewModel = new CallbackForm(this);
 
 			this.getProductImage = function (relativeSrc)
 			{
@@ -71,9 +70,11 @@ define(["./slider.js", "config", "./callbackForm.js", "base", "jquery.fancybox"]
 
 				if (page === "callback")
 				{
-					self.mailSent(false);
+					self.callbackViewModel.sendState("ready");
 				}
 			});
+			
+			ko.applyBindings(this.callbackViewModel, $(".b-splash-page-container.mod_callback")[0]);
 		}
 
 		window.koViewModel = new ViewModel();

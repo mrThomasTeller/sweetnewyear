@@ -6,17 +6,21 @@
 	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 	<link href="./css/screen.css" media="screen, projection" rel="stylesheet"/>
 	<link href="./css/print.css" media="print" rel="stylesheet"/>
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-37026307-1']);
-      _gaq.push(['_trackPageview']);
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-37026307-1']);
+		_gaq.push(['_trackPageview']);
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
+		(function ()
+		{
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 </head>
 <body>
 <div class="l-loader" style="background: white; position: fixed; width: 100%; height: 100%; z-index: 99999;">
@@ -27,8 +31,11 @@
 	<noscript>
 		<p style="margin: 10px 0 0 10px">
 			Пожалуйста, включите поддержку JavaScript в своём браузере, чтобы просмотреть этот сайт.<br/>
-			Если у вас нет такой возможности, посетите сайт <a href="http://estmedok.ru">estmedok.ru</a>, а также загляните на <a href="http://estmedok.ru/news/sladkogo-novogo-goda-poleznye-podarki-na-lyuboi-prazdnik">страничку</a>, посвященную подаркам.
+			Если у вас нет такой возможности, посетите сайт
+			<a href="http://estmedok.ru">estmedok.ru</a>, а также загляните на
+			<a href="http://estmedok.ru/news/sladkogo-novogo-goda-poleznye-podarki-na-lyuboi-prazdnik">страничку</a>, посвященную подаркам.
 		</p>
+
 		<p style="margin: 10px 0 0 10px">
 			Наш телефон: 8-923-422-32-42<br/>
 			E-mail: estmedok@gmail.com
@@ -155,6 +162,7 @@
 		<div class="b-splash-page-overlay" data-bind="click: $root.goToMainPage"></div>
 		<div class="b-splash-page-container b-winpaper">
 			<a href="javascript:void(0)" class="b-winpaper-close" data-bind="click: $root.goToMainPage">✖</a>
+
 			<div class="b-winpaper-article">
 				<h1 class="b-winpaper-article-title" data-bind="text: title"></h1>
 
@@ -167,32 +175,38 @@
 
 	<div class="b-splash-page" data-bind="visible: page() === 'callback'">
 		<div class="b-splash-page-overlay" data-bind="click: $root.goToMainPage"></div>
+		<!-- ko stopBindings: true -->
 		<div class="b-splash-page-container b-winsmart mod_callback">
-			<a href="javascript:void(0)" class="b-winsmart-close" data-bind="click: goToMainPage"></a>
+			<a href="javascript:void(0)" class="b-winsmart-close" data-bind="click: goToMainPage.bind($root)"></a>
 
 			<div class="b-winsmart-content">
-				<form class="b-cbform" data-bind="style: {visibility: mailSent() ? 'hidden' : 'visible'}">
-					<h1 class="b-cbform-title">Форма обратной связи</h1>
-					<label class="b-cbform-input mod_text">
-						<span class="b-cbform-input-label">Ваше имя:</span>
-						<input name="name" class="b-cbform-input-field">
-					</label>
-					<label class="b-cbform-input mod_text">
-						<span class="b-cbform-input-label">Телефон<span class="required">*</span>:</span>
-						<input name="phone" class="b-cbform-input-field required phone">
-					</label>
-					<label class="b-cbform-input mod_textarea">
-						<span class="b-cbform-input-label">Дополнительная информация:</span>
-						<textarea name="additional" class="b-cbform-input-field"></textarea>
-					</label>
-					<input class="b-cbform-input mod_submit" type="submit" value=""
-						data-bind="style: {visibility: mailWait() || mailSent() ? 'hidden' : 'visible'}">
-				</form>
-				<div class="b-cbform-success" data-bind="visible: mailSent()">
-					Спасибо, мы скоро вам перезвоним!
+				<div class="w-b-cbform">
+					<form class="b-cbform">
+						<div class="b-cbform-wait"></div>
+						<h1 class="b-cbform-title">Форма обратной связи</h1>
+						<label class="b-cbform-input mod_text">
+							<span class="b-cbform-input-label">Ваше имя:</span>
+							<input name="name" class="b-cbform-input-field">
+						</label>
+						<label class="b-cbform-input mod_text">
+							<span class="b-cbform-input-label">Телефон<span class="required">*</span>:</span>
+							<input name="phone" class="b-cbform-input-field required phone">
+						</label>
+						<label class="b-cbform-input mod_textarea">
+							<span class="b-cbform-input-label">Дополнительная информация:</span>
+							<textarea name="additional" class="b-cbform-input-field"></textarea>
+						</label>
+						<input class="b-cbform-input mod_submit" type="submit" value="">
+					</form>
+				</div>
+				<div class="b-cbform-success">
+					<div class="b-cbform-success-text">
+						Спасибо, мы скоро вам перезвоним!
+					</div>
 				</div>
 			</div>
 		</div>
+		<!-- /ko -->
 	</div>
 
 </div>
@@ -213,12 +227,12 @@
 		<div class="b-footer-copyright">2012 © Все права защищены</div>
 	</div>
 </div>
-<!--<script src="js/vendor/require.js"></script>-->
-<!--<script src="js/mainConfig.js"></script>-->
-<!--<script>-->
-	<!--require(["js/main.js"]);-->
-<!--</script>-->
-<script src="js/all.js"></script>
+<script src="js/vendor/require.js"></script>
+<script src="js/mainConfig.js"></script>
+<script>
+	require(["js/main.js"]);
+</script>
+<!--<script src="js/all.js"></script>-->
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?71"></script>
 <script type="text/javascript">
 	VK.Widgets.Group("vk_groups", {mode: 0, width: "500", height: "220"}, 29148686);

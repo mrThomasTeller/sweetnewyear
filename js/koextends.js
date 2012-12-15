@@ -36,6 +36,14 @@ define(["knockout"], function ()
 		}
 	};
 
+	ko.bindingHandlers.stopBindings = {
+		init: function ()
+		{
+			return {controlsDescendantBindings: true};
+		}
+	};
+	ko.virtualElements.allowedBindings.stopBindings = true;
+
 	ko.iterateObject = function (obj)
 	{
 		var arr = [];
@@ -46,7 +54,7 @@ define(["knockout"], function ()
 				arr.push({key: key, value: obj[key]});
 			}
 		}
-		
+
 		return arr;
-	}
+	};
 });
