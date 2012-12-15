@@ -1,4 +1,4 @@
-function main(slider)
+define(["./slider.js", "config", "./callbackForm.js", "base", "jquery.fancybox"], function (slider, config)
 {
 	$.ajax({url: "resources/data.json", cache: false, success: function (result)
 	{
@@ -66,6 +66,7 @@ function main(slider)
 				if (page !== "main")
 				{
 					slider.stop();
+					$("html, body").animate({scrollTop: config.page.pageTop});
 				}
 
 				if (page === "callback")
@@ -83,32 +84,4 @@ function main(slider)
 			$(".l-loader").fadeOut("fast");
 		}, 0);
 	}});
-}
-
-require.config({
-	paths: {
-		"jquery.validate.full": "js/libs/empty"
-	},
-	shim: {
-		"js/vendor/jquery.validate/messages_ru": {
-			deps: ["js/vendor/jquery.validate/jquery.validate"]
-		},
-		"jquery.validate.full": {
-			deps: ["js/vendor/jquery.validate/messages_ru"]
-		}
-	}
-});
-
-require(["js/vendor/json2.js", "js/vendor/es5-shim.js"], function ()
-{
-	require(["js/vendor/jquery-1.8.3.js", "js/vendor/knockout-2.2.0.js"], function (js, ko)
-	{
-		window.ko = ko;
-		require(["js/slider.js", "js/callbackForm.js", "js/vendor/fancybox/jquery.fancybox.js",
-			"js/libs/knockout.vhtml.js", "js/koextends.js"],
-			function (slider)
-			{
-				main(slider);
-			});
-	});
 });

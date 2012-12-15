@@ -1,4 +1,4 @@
-define(["./config.js", "./libs/Observer.js"], function (config)
+define(["config", "base"], function (config)
 {
 	var Slider = function (element)
 	{

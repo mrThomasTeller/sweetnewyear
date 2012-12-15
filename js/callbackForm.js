@@ -1,4 +1,4 @@
-define(["jquery.validate.full"], function ()
+define(["base", "jquery.validate.full"], function ()
 {
 	$.validator.addMethod("phone", function(value, element){
 		return this.optional(element) || /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{6,10}$/.test(value);

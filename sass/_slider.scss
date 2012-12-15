@@ -75,7 +75,7 @@ $b-prodimages-image-border: 1px;
 .b-prodimages-icons-item {
 	@include prodimage-image-border;
 	@include inline-block;
-	margin: 0 5px;
+	margin: 0 5px 10px;
 }
 .b-prodimages-icons-item-h {
 	width: 50px;
