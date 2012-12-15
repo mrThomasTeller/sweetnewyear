@@ -5,6 +5,7 @@ $header-height: 256px;
 .l-header {
 	@include vbg-sprite($vsprites73, "headerbg");
 	height: $header-height;
+	overflow: hidden;
 }
 
 .b-header {
