@@ -25,17 +25,6 @@ define(["knockout"], function ()
 		};
 	})();
 
-	ko.bindingHandlers.firstNavigation = {
-		init: function (element, valueAccessor, allBindingsAccessor, viewModel)
-		{
-			$(element).click(function (){ viewModel.page(valueAccessor()) });
-		},
-		update: function (element, valueAccessor, allBindingsAccessor, viewModel)
-		{
-			$(element).toggleClass("state_selected", valueAccessor() === viewModel.page());
-		}
-	};
-
 	ko.bindingHandlers.stopBindings = {
 		init: function ()
 		{

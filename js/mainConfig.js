@@ -11,7 +11,8 @@ require.config({
 		"knockout.vhtml": "js/libs/knockout.vhtml",
 		"config": "js/config",
 		"jquery.validate.messages_ru": "js/vendor/jquery.validate/messages_ru",
-		"jquery.fancybox": "js/vendor/fancybox/jquery.fancybox"
+		"jquery.fancybox": "js/vendor/fancybox/jquery.fancybox",
+		"sammy": "js/vendor/sammy"
 	},
 	shim: {
 		//jquery
@@ -19,6 +20,7 @@ require.config({
 		"jquery.fancybox": ["jquery"],
 		"jquery.validate": ["jquery"],
 		"jquery.validate.messages_ru": ["jquery.validate"],
+		"sammy": ["jquery"],
 
 		//knockout
 		"knockout-raw": ["base-polyfills"],
