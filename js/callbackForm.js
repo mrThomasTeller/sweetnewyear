@@ -3,10 +3,10 @@ define(["base", "jquery.validate.full"], function ()
 	function CallbackForm(rootViewModel)
 	{
 		this.__rootViewModel = rootViewModel;
+		this.__formElement = $(".b-cbform");
+		this.__formHeight = this.__formElement.outerHeight();
+		this.__successTextElement = $(".b-cbform-success").css("top", -this.__formHeight);
 
-		this.formElement = $(".b-cbform");
-		this.formHeight = this.formElement.outerHeight();
-		this.successTextElement = $(".b-cbform-success").css("top", -this.formHeight);
 		this.sendState = ko.observable("ready"); //sending, sent
 
 		this.setUpValidation();
@@ -25,17 +25,29 @@ define(["base", "jquery.validate.full"], function ()
 		{
 			if (state === "sending")
 			{
-				this.formElement.animate({top: 65});
+				this.__formElement.animate({top: 65});
+				this.__sendingStateTimeout = setTimeout(function ()
+				{
+					this.__sendingStateTimeout = null;
+					if (this.sendState() === "sent")
+					{
+						this.onStateChange("sent");
+					}
+				}.bind(this), 1000);
 			}
 			else if (state === "sent")
 			{
-				this.formElement.animate({top: this.formHeight + 65});
-				this.successTextElement.animate({top: 0});
+				if (!this.__sendingStateTimeout)
+				{
+					this.__formElement.animate({top: this.__formHeight + 65});
+					this.__successTextElement.animate({top: 0});
+				}
 			}
 			else if (state === "ready")
 			{
-				this.formElement.css("top", 0);
-				this.successTextElement.css("top", -this.formHeight);
+				this.__formElement[0].reset();
+				this.__formElement.css("top", 0);
+				this.__successTextElement.css("top", -this.__formHeight);
 			}
 		},
 
@@ -52,13 +64,12 @@ define(["base", "jquery.validate.full"], function ()
 			$.post("script/callback.php", data, function (response)
 			{
 				this.sendState("sent");
-				form.get(0).reset();
 			}.bind(this));
 		},
 
 		setUpValidation: function ()
 		{
-			this.formElement.validate({
+			this.__formElement.validate({
 				submitHandler: this.onSubmit.bind(this)
 			});
 		}

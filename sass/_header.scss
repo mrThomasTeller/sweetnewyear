@@ -9,25 +9,25 @@ $header-height: 256px;
 }
 
 .b-header {
+	@include margin-center;
 	position: relative;
 	height: 100%;
 	width: $center-width;
-	@include margin-center;
 }
 
 .b-header-bear {
+	@include rec-sprite($sprites, "bear");
 	display: block;
 	position: absolute;
 	left: 12px;
 	top: 32px;
-	@include rec-sprite($sprites, "bear");
 }
 
 .b-header-title {
+	@include rec-sprite($sprites, "title");
 	position: absolute;
 	top: 73px;
 	left: 221px;
-	@include rec-sprite($sprites, "title");
 }
 
 .b-header-contacts {
