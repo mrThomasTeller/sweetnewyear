@@ -173,8 +173,10 @@
 				"<img src='resources/img/brigada.jpg'/>",
 				"<br/>",
 				"<span style='text-align: center; font-style: italic; font-",
-				"size: 16px'>Егор, Лёша и Рома</span>",
-				"</p>"
+				"size: 16px'><a href='http://vk.com/id1816958' target='_blank'>",
+				"Егор</a>, <a href='http://vk.com/id3517046' target='_blank' ",
+				"title='Наташа, жена Лёши'>Лёша</a> и <a href='http://vk.com/puritos'",
+				" target='_blank'>Рома</a></span></p>"
 			]
 		},
 		"principe": {
